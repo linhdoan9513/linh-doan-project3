@@ -1,24 +1,13 @@
-import { useState, useEffect } from "react";
-import Login from "./Login";
-import firebase from "./firebase";
-
 import "./App.css";
+import Expense from "./Expense";
 
-function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      setUser(user);
-    });
-  }, []);
-
-  console.log(user);
+const App = () => {
   return (
     <div className="App">
       <h1>Budget Tracker</h1>
+      <Expense />
     </div>
   );
-}
+};
 
 export default App;
