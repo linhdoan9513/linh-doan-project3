@@ -19,4 +19,7 @@ Model System will be responsible for interacting with Firebase real time data ba
 #### Views 👀
 Views System will be responsible for displaying and rendering data from Firebase as well as receiving user input/interaction and sending user input directly to Model System.
 
+### Citation: 
+Use third party library to create calendar 🗓
+https://blog.logrocket.com/react-calendar-tutorial-build-customize-calendar/
 

@@ -1,18 +1,18 @@
 import { createItem, deleteItem, getItem } from "../Models/ItemModel";
 import { useState, useEffect } from "react";
 
-const Item = () => {
+const Item = (props) => {
   const [itemValue, setItemValue] = useState(0);
+  const value = { itemValue, ...props.date };
 
-  createItem("grocery", "chicken", 10);
+  console.log(value);
+  // const displayItem = () => {
+  //   getItem("grocery", "chicken", (snapshot) => {
+  //     setItemValue(snapshot.val());
+  //   });
+  // };
 
-  const displayItem = () => {
-    getItem("grocery", "chicken", (snapshot) => {
-      setItemValue(snapshot.val());
-    });
-  };
-
-  useEffect(() => displayItem());
+  // useEffect(() => displayItem());
 
   return <div>{itemValue}</div>;
 };
