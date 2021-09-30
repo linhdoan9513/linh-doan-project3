@@ -1,11 +1,13 @@
 import "./App.css";
-import Expense from "./Expense";
+import Category from "./Views/Category";
+import Item from "./Views/Item";
 
 const App = () => {
   return (
     <div className="App">
       <h1>Budget Tracker</h1>
-      <Expense />
+      <Category />
+      <Item />
     </div>
   );
 };
