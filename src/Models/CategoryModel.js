@@ -13,7 +13,7 @@ const deleteCategory = (categoryName) => {
 
 const getCategory = (categoryName, callback) => {
   const db = getDatabase(firebaseApp);
-  const categoryRef = ref(getDatabase(firebaseApp), categoryName);
+  const categoryRef = ref(db, categoryName);
   onValue(categoryRef, callback);
 };
 
@@ -27,7 +27,6 @@ const getAllCategories = () => {
   const categoryRef = ref(db, "data/");
   onValue(categoryRef, (snapshot) => {
     const data = snapshot.val();
-    console.log(data);
   });
 };
 
