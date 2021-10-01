@@ -6,6 +6,13 @@ const createCategory = (categoryName) => {
   set(ref(db, "data/" + categoryName), 0);
 };
 
+const addCategory = (categoryName) => {
+  const db = getDatabase(firebaseApp);
+  const updates = {};
+  updates["/data/" + categoryName] = 0;
+  return update(ref(db), updates);
+};
+
 const deleteCategory = (categoryName) => {
   const db = getDatabase(firebaseApp);
   update(ref(db, categoryName), null);
@@ -22,13 +29,17 @@ const getCategory = (categoryName, callback) => {
 //create new Category with new name
 //delete old CategoryName
 
-const getAllCategories = () => {
+const getAllCategories = (callback) => {
   const db = getDatabase();
-  const categoryRef = ref(db, "data/");
-  onValue(categoryRef, (snapshot) => {
-    const data = snapshot.val();
-  });
+  const dbRef = ref(db, "data/");
+  onValue(dbRef, callback);
 };
 
 // this exports the CONFIGURED version of firebase
-export { createCategory, deleteCategory, getCategory, getAllCategories };
+export {
+  createCategory,
+  deleteCategory,
+  getCategory,
+  getAllCategories,
+  addCategory,
+};
