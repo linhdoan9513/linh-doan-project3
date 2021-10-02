@@ -5,7 +5,6 @@ const Item = (props) => {
   const [itemValue, setItemValue] = useState(0);
   const value = { itemValue, ...props.date };
 
-  console.log(value);
   // const displayItem = () => {
   //   getItem("grocery", "chicken", (snapshot) => {
   //     setItemValue(snapshot.val());
