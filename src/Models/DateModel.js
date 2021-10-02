@@ -3,7 +3,7 @@ import firebaseApp from "./firebaseApp";
 
 const createDate = (Date) => {
   const db = getDatabase(firebaseApp);
-  set(ref(db, "data/" + Date), 0);
+  set(ref(db, "expense/" + Date), 0);
 };
 
 // const getDate = (DateName, callback) => {

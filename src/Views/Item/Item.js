@@ -1,19 +1,37 @@
-import { createItem, deleteItem, getItem } from "../Models/ItemModel";
+import { createItem, deleteItem, getItem } from "../../Models/ItemModel";
 import { useState, useEffect } from "react";
 
 const Item = (props) => {
-  const [itemValue, setItemValue] = useState(0);
-  const value = { itemValue, ...props.date };
+  console.log(props);
 
-  // const displayItem = () => {
-  //   getItem("grocery", "chicken", (snapshot) => {
-  //     setItemValue(snapshot.val());
-  //   });
-  // };
+  const [userInput, setUserInput] = useState("");
 
-  // useEffect(() => displayItem());
+  //  const handleClick = (event) => {
+  //    event.preventDefault();
+  //    if (userInput) {
+  //      createItem(props.category, )
+  //    } else {
+  //      alert("please enter sth");
+  //    }
+  //    setUserInput(" ");
+  //  };
 
-  return <div>{itemValue}</div>;
+  return (
+    <div>
+      {" "}
+      <form>
+        <label htmlFor="newItem">
+          Add Item
+          <input
+            type="text"
+            value={userInput}
+            // onChange={(e) => setUserInput(e.target.value)}
+          />
+        </label>
+        <button>Add Item</button>
+      </form>
+    </div>
+  );
 };
 
 export default Item;

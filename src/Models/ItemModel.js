@@ -3,19 +3,19 @@ import firebaseApp from "./firebaseApp";
 
 const createItem = (categoryName, itemName, value) => {
   const db = getDatabase(firebaseApp);
-  set(ref(db, `data/${categoryName}/${itemName}`), value);
+  set(ref(db, `user1/expense/${categoryName}/${itemName}`), value);
 };
 
 const deleteItem = (categoryName, itemName) => {
   const db = getDatabase(firebaseApp);
-  update(ref(db, `data/${categoryName}/${itemName}`), null);
+  update(ref(db, `user1/expense/${categoryName}/${itemName}`), null);
 };
 
 const getItem = (categoryName, itemName, callback) => {
   const db = getDatabase(firebaseApp);
   const ItemRef = ref(
     getDatabase(firebaseApp),
-    `data/${categoryName}/${itemName}`
+    `user1/expense/${categoryName}/${itemName}`
   );
   onValue(ItemRef, callback);
 };

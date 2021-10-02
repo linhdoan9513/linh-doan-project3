@@ -1,17 +1,16 @@
-import { addCategory } from "../../Models/CategoryModel";
+import { addUserCategory } from "../../Models/CategoryModel";
 import { useState } from "react";
 
-const AddCategory = () => {
+const AddUserCategory = () => {
   const [userInput, setUserInput] = useState("");
 
   const handleClick = (event) => {
     event.preventDefault();
     if (userInput) {
-      addCategory(userInput);
+      addUserCategory(userInput);
     } else {
       alert("please enter sth");
     }
-
     setUserInput(" ");
   };
 
@@ -30,4 +29,4 @@ const AddCategory = () => {
   );
 };
 
-export default AddCategory;
+export default AddUserCategory;
