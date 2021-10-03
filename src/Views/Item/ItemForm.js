@@ -1,8 +1,8 @@
-import { createItem } from "../../Models/ItemModel";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { addUserCategory } from "../../Models/CategoryModel";
 
 const ItemForm = (props) => {
   let categoryName = props.categoryChoice;
@@ -13,14 +13,18 @@ const ItemForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if ((itemName !== "", itemValue !== "")) {
-      createItem(categoryName, itemName, {
+      addUserCategory({
+        category: categoryName,
+        item: itemName,
         amount: parseInt(itemValue, 10),
         date: selectedDate.toISOString(),
       });
-      console.log(`sent form`);
     } else {
       alert("please enter sth");
     }
+    setSelectedDate(new Date());
+    setItemName("");
+    setItemValue("");
     event.target.reset();
   };
 

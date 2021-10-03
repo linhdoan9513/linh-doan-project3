@@ -1,34 +1,44 @@
-import { getUserCategories } from "../../Models/CategoryModel";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DisplayCategory from "./DisplayUserCategory";
-import AddUserCategory from "./AddUserCategory";
 import Item from "../Item/Item";
 
 const UserCategory = (props) => {
   const [value, setValue] = useState("default");
-  const [userCategories, setUserCategories] = useState([]);
-  const [displayInput, setDisplayInput] = useState(false);
+  // const [userCategories, setUserCategories] = useState([]);
+  const defaultCategory = [
+    "Groceries",
+    "Utilities",
+    "Shopping",
+    "Dinning Out",
+    "Cash",
+    "Education",
+    "Health",
+    "Home",
+    "Transportation",
+  ];
+  // const [displayInput, setDisplayInput] = useState(false);
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
-  const displayUserCategories = () => {
-    getUserCategories((snapshot) => {
-      const data = snapshot.val();
-      setUserCategories(data);
-    });
-  };
+  // const displayUserCategories = () => {
+  //   getUserCategories((snapshot) => {
+  //     const data = snapshot.val();
+  //     console.log(`data is ` + data);
+  //     setUserCategories(data);
+  //   });
+  // };
 
-  useEffect(() => {
-    displayUserCategories();
-  }, []);
+  // useEffect(() => {
+  //   displayUserCategories();
+  // }, []);
 
   return (
     <section className="category">
-      <button onClick={() => setDisplayInput(!displayInput)}>+</button>
-      {displayInput ? <AddUserCategory /> : null}
-      <DisplayCategory category={userCategories} />
+      {/* <button onClick={() => setDisplayInput(!displayInput)}>+</button>
+      {displayInput ? <AddUserCategory /> : null} */}
+      <DisplayCategory category={defaultCategory} />
       <form>
         <label htmlFor="category" className="sr-only">
           Select Category
@@ -43,7 +53,7 @@ const UserCategory = (props) => {
           <option value="default" disabled>
             Choose a category
           </option>
-          {Object.entries(userCategories).map(([eachCategory, _]) => {
+          {defaultCategory.map((eachCategory) => {
             return (
               <option value={eachCategory} key={eachCategory}>
                 {eachCategory}

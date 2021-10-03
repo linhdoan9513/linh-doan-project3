@@ -1,12 +1,13 @@
 import "./App.css";
-import DefaultCategory from "./Views/Category/DefaultCategory";
+
+import UserCategory from "./Views/Category/UserCategory";
 
 const App = () => {
   return (
     <>
       <h1>Budget Tracker</h1>
       <main>
-        <DefaultCategory />
+        <UserCategory />
       </main>
     </>
   );
