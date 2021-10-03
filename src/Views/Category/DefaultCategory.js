@@ -3,7 +3,7 @@ import { getAllCategories, addCategory } from "../../Models/CategoryModel";
 import { useState, useEffect } from "react";
 import UserCategory from "./UserCategory";
 
-const Category = () => {
+const DefaultCategory = () => {
   const defaultCategory = [
     "Groceries",
     "Utilities",
@@ -32,10 +32,10 @@ const Category = () => {
   }, []);
 
   return (
-    <section>
+    <>
       <UserCategory category={allCategories} />
-    </section>
+    </>
   );
 };
 
-export default Category;
+export default DefaultCategory;

@@ -6,12 +6,6 @@ import Item from "./Item";
 function BudgetCalendar() {
   const [date, setDate] = useState(new Date());
 
-  const dateSelection = {
-    year: date.getFullYear(),
-    month: date.getMonth(),
-    date: date.getDate(),
-  };
-
   return (
     <div className="app">
       <h1 className="text-center">React Calendar</h1>

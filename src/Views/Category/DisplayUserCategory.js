@@ -4,7 +4,6 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const DisplayUserCategory = (props) => {
   const handleClick = (e) => {
-    console.log(`running`, e.target.name);
     deleteCategory(e.target.name);
   };
 

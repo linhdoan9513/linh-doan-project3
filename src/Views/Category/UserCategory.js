@@ -16,11 +16,7 @@ const UserCategory = (props) => {
   const displayUserCategories = () => {
     getUserCategories((snapshot) => {
       const data = snapshot.val();
-      if (data === null || Object.keys(data).length === 0) {
-        setUserCategories(props.category);
-      } else {
-        setUserCategories(data);
-      }
+      setUserCategories(data);
     });
   };
 
@@ -29,7 +25,7 @@ const UserCategory = (props) => {
   }, []);
 
   return (
-    <section>
+    <section className="category">
       <button onClick={() => setDisplayInput(!displayInput)}>+</button>
       {displayInput ? <AddUserCategory /> : null}
       <DisplayCategory category={userCategories} />

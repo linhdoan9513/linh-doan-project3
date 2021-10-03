@@ -1,4 +1,4 @@
-import { getDatabase, ref, onValue, set, update } from "firebase/database";
+import { getDatabase, ref, onValue, set, remove } from "firebase/database";
 import firebaseApp from "./firebaseApp";
 
 const createItem = (categoryName, itemName, value) => {
@@ -8,7 +8,7 @@ const createItem = (categoryName, itemName, value) => {
 
 const deleteItem = (categoryName, itemName) => {
   const db = getDatabase(firebaseApp);
-  update(ref(db, `user1/expense/${categoryName}/${itemName}`), null);
+  remove(ref(db, `user1/expense/${categoryName}/${itemName}`), 0);
 };
 
 const getItem = (categoryName, itemName, callback) => {
