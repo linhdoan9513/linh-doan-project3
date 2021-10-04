@@ -1,11 +1,11 @@
 import ItemForm from "./ItemForm";
-import DisplayItem from "./DisplayItem";
+import DisplayTotal from "./DisplayTotal";
 
 const Item = (props) => {
   return (
     <section className="itemSection">
       <ItemForm categoryChoice={props.categoryChoice} />
-      <DisplayItem allItems={props.allCategories} />
+      <DisplayTotal />
     </section>
   );
 };

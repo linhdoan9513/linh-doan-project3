@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DisplayCategory from "./DisplayUserCategory";
+// import DisplayCategory from "./DisplayUserCategory";
 import Item from "../Item/Item";
 
 const UserCategory = (props) => {
@@ -16,6 +16,7 @@ const UserCategory = (props) => {
     "Home",
     "Transportation",
   ];
+
   // const [displayInput, setDisplayInput] = useState(false);
 
   const handleChange = (e) => {
@@ -38,7 +39,7 @@ const UserCategory = (props) => {
     <section className="category">
       {/* <button onClick={() => setDisplayInput(!displayInput)}>+</button>
       {displayInput ? <AddUserCategory /> : null} */}
-      <DisplayCategory category={defaultCategory} />
+      {/* <DisplayCategory category={defaultCategory} /> */}
       <form>
         <label htmlFor="category" className="sr-only">
           Select Category
@@ -53,7 +54,7 @@ const UserCategory = (props) => {
           <option value="default" disabled>
             Choose a category
           </option>
-          {defaultCategory.map((eachCategory) => {
+          {defaultCategory.sort().map((eachCategory) => {
             return (
               <option value={eachCategory} key={eachCategory}>
                 {eachCategory}
