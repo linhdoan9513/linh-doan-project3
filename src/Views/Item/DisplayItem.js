@@ -1,5 +1,14 @@
+import { useState, useEffect } from "react";
+
 const DisplayItem = (props) => {
-  const list = props.list;
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    if (props.list !== undefined) {
+      setList(props.list);
+    }
+  }, [props.list]);
+
   return (
     <div>
       <ul>

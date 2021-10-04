@@ -63,7 +63,7 @@ const UserCategory = (props) => {
           })}
         </select>
       </form>
-      <Item categoryChoice={value} />
+      <Item categoryChoice={value} allCategories={defaultCategory.sort()} />
     </section>
   );
 };
