@@ -13,7 +13,7 @@ const Category = (props) => {
     "Cash",
     "Education",
     "Health",
-    "Home",
+    "House Hold",
     "Transportation",
   ];
 

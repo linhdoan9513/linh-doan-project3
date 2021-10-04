@@ -1,4 +1,5 @@
 import "./App.css";
+import money from "./assets/money.png";
 
 import Category from "./Views/Category/Category";
 import Income from "./Views/Income/Income";
@@ -6,7 +7,14 @@ import Income from "./Views/Income/Income";
 const App = () => {
   return (
     <>
-      <h1>Budget Tracker</h1>
+      <header>
+        <h1>
+          <span>
+            <img className="logo" src={money} alt="wallet image" />
+          </span>
+          Budget Planner
+        </h1>
+      </header>
       <main>
         <Category />
         <Income />

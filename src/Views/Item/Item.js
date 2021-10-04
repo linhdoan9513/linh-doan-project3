@@ -1,6 +1,5 @@
 import ItemForm from "./ItemForm";
 import DisplayExpense from "./DisplayExpense";
-import DisplayItem from "./DisplayItem";
 import { getData } from "../../Models/CategoryModel";
 import { useEffect, useState } from "react";
 import useFormat from "../CustomHooks/useFormat";

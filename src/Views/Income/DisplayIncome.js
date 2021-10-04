@@ -1,5 +1,4 @@
 import useTotal from "../CustomHooks/useTotal";
-// import { useState, useEffect } from "react";
 import useHashMap from "../CustomHooks/useHashMap";
 
 const DisplayIncome = (props) => {
