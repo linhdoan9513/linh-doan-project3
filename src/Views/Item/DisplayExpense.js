@@ -1,20 +1,9 @@
 import DisplayItem from "./DisplayItem";
+import useTotal from "../CustomHooks/useTotal";
 
-const DisplayExpense = (props) => {
+const DisplayTotal = (props) => {
   const allData = props.data;
-  // const allCategories = props.allCategories;
-
-  let totalAmount = 0;
-  const filterFunction = () => {
-    if (allData !== undefined) {
-      for (let i = 0; i < allData.length; i++) {
-        totalAmount += allData[i].amount;
-      }
-    }
-    return totalAmount;
-  };
-
-  filterFunction();
+  let totalExpense = useTotal(allData);
 
   // const filterCategory = (categoryName) => {
   //   return allData.filter((eachCategory) => {
@@ -24,10 +13,10 @@ const DisplayExpense = (props) => {
 
   return (
     <div>
-      <p>Total spending: {totalAmount}</p>
+      <p>Total spending: {totalExpense}</p>
       <DisplayItem list={allData} />
     </div>
   );
 };
 
-export default DisplayExpense;
+export default DisplayTotal;

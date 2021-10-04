@@ -3,6 +3,7 @@ import DisplayExpense from "./DisplayExpense";
 import DisplayItem from "./DisplayItem";
 import { getData } from "../../Models/CategoryModel";
 import { useEffect, useState } from "react";
+import useFormat from "../CustomHooks/useFormat";
 
 const Item = (props) => {
   const [category, setCategory] = useState([]);
@@ -14,14 +15,7 @@ const Item = (props) => {
     });
   }, []);
 
-  let formattedDatabase = [];
-  const pushValue = () => {
-    Object.entries(category).map(([_, value]) => {
-      return formattedDatabase.push(value);
-    });
-  };
-
-  pushValue();
+  let formattedDatabase = useFormat(category);
 
   return (
     <section className="itemSection">

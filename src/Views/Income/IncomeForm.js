@@ -12,8 +12,8 @@ const IncomeForm = (props) => {
     event.preventDefault();
     if (incomeValue !== "") {
       addData("income/", {
-        type: props.income,
-        amount: incomeValue,
+        type: props.list,
+        amount: parseFloat(incomeValue),
         date: {
           year: selectedDate.getFullYear(),
           month: selectedDate.getMonth() + 1,

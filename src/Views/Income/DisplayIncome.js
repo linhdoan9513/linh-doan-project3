@@ -1,25 +1,14 @@
-import { getData } from "../../Models/incomeModel";
+import useTotal from "../CustomHooks/useTotal";
 
-const DisplayIncome = () => {
-  const [income, setIncome] = useState([]);
+const DisplayIncome = (props) => {
+  let totalIncome = useTotal(props.income);
+  console.log(props.income);
 
-  useEffect(() => {
-    getData("income/", (snapshot) => {
-      const data = snapshot.val();
-      setIncome(data);
-    });
-  }, []);
-
-  let formattedDatabase = [];
-  const pushValue = () => {
-    Object.entries(income).map(([_, value]) => {
-      return formattedDatabase.push(value);
-    });
-  };
-
-  console.log(pushValue());
-
-  return <div></div>;
+  return (
+    <div>
+      <p>Total Income: {totalIncome} </p>
+    </div>
+  );
 };
 
 export default DisplayIncome;
