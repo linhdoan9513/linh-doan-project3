@@ -2,8 +2,8 @@ import DisplayItem from "./DisplayItem";
 import useTotal from "../CustomHooks/useTotal";
 
 const DisplayTotal = (props) => {
-  const allData = props.data;
-  let totalExpense = useTotal(allData);
+  const allExpense = props.data;
+  let totalExpense = useTotal(allExpense);
 
   // const filterCategory = (categoryName) => {
   //   return allData.filter((eachCategory) => {
@@ -14,7 +14,7 @@ const DisplayTotal = (props) => {
   return (
     <div>
       <p>Total spending: {totalExpense}</p>
-      <DisplayItem list={allData} />
+      <DisplayItem list={allExpense} />
     </div>
   );
 };

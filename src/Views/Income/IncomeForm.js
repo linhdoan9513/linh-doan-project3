@@ -12,7 +12,7 @@ const IncomeForm = (props) => {
     event.preventDefault();
     if (incomeValue !== "") {
       addData("income/", {
-        type: props.list,
+        category: props.choice,
         amount: parseFloat(incomeValue),
         date: {
           year: selectedDate.getFullYear(),

@@ -1,5 +1,4 @@
 import IncomeList from "./IncomeList";
-import DisplayIncome from "./DisplayIncome";
 import { getData } from "../../Models/CategoryModel";
 import { useState, useEffect } from "react";
 import useFormat from "../CustomHooks/useFormat";
@@ -18,8 +17,7 @@ const Income = () => {
 
   return (
     <section className="incomeSection">
-      <IncomeList />
-      <DisplayIncome income={formattedDatabase} />
+      <IncomeList income={formattedDatabase} />
     </section>
   );
 };
