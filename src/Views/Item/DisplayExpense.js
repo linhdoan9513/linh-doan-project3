@@ -1,16 +1,13 @@
 import DisplayItem from "./DisplayItem";
 import useTotal from "../CustomHooks/useTotal";
+import useHashMap from "../CustomHooks/useHashMap";
 
 const DisplayTotal = (props) => {
   const allExpense = props.data;
   let totalExpense = useTotal(allExpense);
+  let expenseObject = useHashMap(props.data, props.allCategories);
 
-  // const filterCategory = (categoryName) => {
-  //   return allData.filter((eachCategory) => {
-  //     return eachCategory.category === categoryName;
-  //   });
-  // };
-
+  console.log(expenseObject);
   return (
     <div>
       <p>Total spending: {totalExpense}</p>

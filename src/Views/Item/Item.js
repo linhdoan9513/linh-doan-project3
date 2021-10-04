@@ -24,7 +24,6 @@ const Item = (props) => {
         allCategories={props.allCategories}
         data={formattedDatabase}
       />
-      <DisplayItem />
     </section>
   );
 };

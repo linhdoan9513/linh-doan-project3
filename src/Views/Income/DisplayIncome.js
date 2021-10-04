@@ -1,37 +1,11 @@
 import useTotal from "../CustomHooks/useTotal";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import useHashMap from "../CustomHooks/useHashMap";
 
 const DisplayIncome = (props) => {
-  let totalIncome = useTotal(props.income);
-  const incomeTypes = props.list;
-  let incomeObject = {};
-  const [income, setIncome] = useState([]);
-
-  useEffect(() => {
-    if (props.income !== undefined) {
-      setIncome(props.income);
-    }
-  }, [props.income]);
-
-  const incomeTypeMap = () => {
-    for (let i = 0; i < incomeTypes.length; i++) {
-      incomeObject[incomeTypes[i]] = 0;
-    }
-    return incomeObject;
-  };
-
-  incomeTypeMap();
-
-  const incomeAmountMap = () => {
-    for (let i = 0; i < income.length; i++) {
-      if (income[i].category in incomeObject) {
-        incomeObject[income[i].category] += income[i].amount;
-      }
-    }
-  };
-
-  incomeAmountMap();
-  console.log(incomeObject);
+  let incomeArray = props.income;
+  let totalIncome = useTotal(incomeArray);
+  let incomeObject = useHashMap(incomeArray, props.list);
 
   return (
     <div>
