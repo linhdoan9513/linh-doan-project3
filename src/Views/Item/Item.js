@@ -1,14 +1,14 @@
 import ItemForm from "./ItemForm";
-import DisplayTotal from "./DisplayTotal";
+import DisplayExpense from "./DisplayExpense";
 import DisplayItem from "./DisplayItem";
-import { getAllCategories } from "../../Models/CategoryModel";
+import { getData } from "../../Models/CategoryModel";
 import { useEffect, useState } from "react";
 
 const Item = (props) => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    getAllCategories((snapshot) => {
+    getData("expense/", (snapshot) => {
       const data = snapshot.val();
       setCategory(data);
     });
@@ -26,7 +26,7 @@ const Item = (props) => {
   return (
     <section className="itemSection">
       <ItemForm categoryChoice={props.categoryChoice} />
-      <DisplayTotal
+      <DisplayExpense
         allCategories={props.allCategories}
         data={formattedDatabase}
       />

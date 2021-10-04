@@ -1,8 +1,8 @@
 import DisplayItem from "./DisplayItem";
 
-const DisplayTotal = (props) => {
+const DisplayExpense = (props) => {
   const allData = props.data;
-  const allCategories = props.allCategories;
+  // const allCategories = props.allCategories;
 
   let totalAmount = 0;
   const filterFunction = () => {
@@ -16,11 +16,11 @@ const DisplayTotal = (props) => {
 
   filterFunction();
 
-  const filterCategory = (categoryName) => {
-    return allData.filter((eachCategory) => {
-      return eachCategory.category === categoryName;
-    });
-  };
+  // const filterCategory = (categoryName) => {
+  //   return allData.filter((eachCategory) => {
+  //     return eachCategory.category === categoryName;
+  //   });
+  // };
 
   return (
     <div>
@@ -30,4 +30,4 @@ const DisplayTotal = (props) => {
   );
 };
 
-export default DisplayTotal;
+export default DisplayExpense;

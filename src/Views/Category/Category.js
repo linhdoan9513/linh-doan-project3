@@ -2,7 +2,7 @@ import { useState } from "react";
 // import DisplayCategory from "./DisplayUserCategory";
 import Item from "../Item/Item";
 
-const UserCategory = (props) => {
+const Category = (props) => {
   const [value, setValue] = useState("default");
   // const [userCategories, setUserCategories] = useState([]);
   const defaultCategory = [
@@ -18,10 +18,6 @@ const UserCategory = (props) => {
   ];
 
   // const [displayInput, setDisplayInput] = useState(false);
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
 
   // const displayUserCategories = () => {
   //   getUserCategories((snapshot) => {
@@ -46,7 +42,7 @@ const UserCategory = (props) => {
         </label>
         <select
           defaultValue={value}
-          onChange={handleChange}
+          onChange={(e) => setValue(e.target.value)}
           type="select"
           name="category"
           id="category"
@@ -68,4 +64,4 @@ const UserCategory = (props) => {
   );
 };
 
-export default UserCategory;
+export default Category;

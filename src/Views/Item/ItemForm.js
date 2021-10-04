@@ -2,7 +2,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
-import { addFunction } from "../../Models/CategoryModel";
+import { addData } from "../../Models/CategoryModel";
 
 const ItemForm = (props) => {
   let categoryName = props.categoryChoice;
@@ -13,11 +13,15 @@ const ItemForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if ((itemName !== "", itemValue !== "")) {
-      addFunction("expense/", {
+      addData("expense/", {
         category: categoryName,
         item: itemName,
         amount: parseFloat(itemValue),
-        date: selectedDate.toISOString(),
+        date: {
+          year: selectedDate.getFullYear(),
+          month: selectedDate.getMonth() + 1,
+          date: selectedDate.getDate(),
+        },
       });
     } else {
       alert("please enter sth");

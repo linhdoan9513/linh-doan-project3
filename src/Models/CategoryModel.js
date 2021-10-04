@@ -13,7 +13,7 @@ import firebaseApp from "./firebaseApp";
 //   return update(ref(db), updates);
 // };
 
-const addFunction = (parentNode, categoryName) => {
+const addData = (parentNode, categoryName) => {
   const db = getDatabase(firebaseApp);
 
   // const updates = {};
@@ -27,20 +27,20 @@ const deleteCategory = (categoryName) => {
   return remove(ref(db, "user1/expense/" + categoryName));
 };
 
-const getCategory = (categoryName, callback) => {
-  const db = getDatabase(firebaseApp);
-  const categoryRef = ref(db, categoryName);
-  onValue(categoryRef, callback);
-};
+// const getCategory = (categoryName, callback) => {
+//   const db = getDatabase(firebaseApp);
+//   const categoryRef = ref(db, categoryName);
+//   onValue(categoryRef, callback);
+// };
 
 //updateCategoryName
 //getCategory
 //create new Category with new name
 //delete old CategoryName
 
-const getAllCategories = (callback) => {
+const getData = (parentNode, callback) => {
   const db = getDatabase();
-  onValue(ref(db, "expense/"), callback);
+  onValue(ref(db, parentNode), callback);
 };
 
 const getUserCategories = (callback) => {
@@ -52,8 +52,8 @@ const getUserCategories = (callback) => {
 // this exports the CONFIGURED version of firebase
 export {
   deleteCategory,
-  getCategory,
-  getAllCategories,
-  addFunction,
+  // getCategory,
+  getData,
+  addData,
   getUserCategories,
 };
