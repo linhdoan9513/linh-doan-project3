@@ -25,7 +25,7 @@ const addUserCategory = (categoryName) => {
   // const updates = {};
   // updates["user1/expense/" + categoryName] = 0;
   // return update(ref(db), updates);
-  push(ref(db), categoryName);
+  push(ref(db, "user1/"), categoryName);
 };
 
 const deleteCategory = (categoryName) => {
