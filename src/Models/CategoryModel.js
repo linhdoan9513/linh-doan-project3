@@ -1,11 +1,4 @@
-import {
-  getDatabase,
-  ref,
-  onValue,
-  update,
-  remove,
-  push,
-} from "firebase/database";
+import { getDatabase, ref, onValue, remove, push } from "firebase/database";
 import firebaseApp from "./firebaseApp";
 
 // const createCategory = (categoryName) => {
@@ -13,19 +6,20 @@ import firebaseApp from "./firebaseApp";
 //   set(ref(db, "expense/" + categoryName), 0);
 // };
 
-const addCategory = (categoryName) => {
-  const db = getDatabase(firebaseApp);
-  const updates = {};
-  updates["default_user/expense/" + categoryName] = 0;
-  return update(ref(db), updates);
-};
+// const addCategory = (categoryName) => {
+//   const db = getDatabase(firebaseApp);
+//   const updates = {};
+//   updates["default_user/expense/" + categoryName] = 0;
+//   return update(ref(db), updates);
+// };
 
-const addUserCategory = (categoryName) => {
+const addFunction = (parentNode, categoryName) => {
   const db = getDatabase(firebaseApp);
+
   // const updates = {};
   // updates["user1/expense/" + categoryName] = 0;
   // return update(ref(db), updates);
-  push(ref(db), categoryName);
+  push(ref(db, parentNode), categoryName);
 };
 
 const deleteCategory = (categoryName) => {
@@ -46,8 +40,7 @@ const getCategory = (categoryName, callback) => {
 
 const getAllCategories = (callback) => {
   const db = getDatabase();
-  const dbRef = ref(db);
-  onValue(dbRef, callback);
+  onValue(ref(db, "expense/"), callback);
 };
 
 const getUserCategories = (callback) => {
@@ -61,7 +54,6 @@ export {
   deleteCategory,
   getCategory,
   getAllCategories,
-  addCategory,
-  addUserCategory,
+  addFunction,
   getUserCategories,
 };

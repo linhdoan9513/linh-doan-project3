@@ -1,4 +1,4 @@
-import { addUserCategory } from "../../Models/CategoryModel";
+import { addFunction } from "../../Models/CategoryModel";
 import { useState } from "react";
 
 const AddUserCategory = () => {
@@ -7,7 +7,7 @@ const AddUserCategory = () => {
   const handleClick = (event) => {
     event.preventDefault();
     if (userInput) {
-      addUserCategory(userInput);
+      addFunction(userInput);
     } else {
       alert("please enter sth");
     }

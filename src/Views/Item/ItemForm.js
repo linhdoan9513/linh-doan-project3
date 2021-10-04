@@ -2,7 +2,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
-import { addUserCategory } from "../../Models/CategoryModel";
+import { addFunction } from "../../Models/CategoryModel";
 
 const ItemForm = (props) => {
   let categoryName = props.categoryChoice;
@@ -13,10 +13,10 @@ const ItemForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if ((itemName !== "", itemValue !== "")) {
-      addUserCategory({
+      addFunction("expense/", {
         category: categoryName,
         item: itemName,
-        amount: parseInt(itemValue, 10),
+        amount: parseFloat(itemValue),
         date: selectedDate.toISOString(),
       });
     } else {
@@ -39,10 +39,20 @@ const ItemForm = (props) => {
         <input
           type="text"
           name="item"
+          placeholder="Enter transaction"
+          required
           onChange={(e) => setItemName(e.target.value)}
         />
         <label htmlFor="email">Amount</label>
-        <input type="number" name="amount" onChange={handleChange} />
+        <input
+          type="number"
+          name="amount"
+          onChange={handleChange}
+          step="any"
+          pattern="[0-9]*"
+          required
+          placeholder="Enter amount"
+        />
         <div className="date" onChange={handleChange}>
           <DatePicker
             selected={selectedDate}

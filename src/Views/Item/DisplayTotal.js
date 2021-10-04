@@ -2,6 +2,8 @@ import DisplayItem from "./DisplayItem";
 
 const DisplayTotal = (props) => {
   const allData = props.data;
+  const allCategories = props.allCategories;
+
   let totalAmount = 0;
   const filterFunction = () => {
     if (allData !== undefined) {
