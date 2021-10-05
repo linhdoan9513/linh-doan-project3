@@ -17,22 +17,8 @@ const Category = (props) => {
     "Transportation",
   ];
 
-  // const [displayInput, setDisplayInput] = useState(false);
-
-  // const displayUserCategories = () => {
-  //   getUserCategories((snapshot) => {
-  //     const data = snapshot.val();
-  //     console.log(`data is ` + data);
-  //     setUserCategories(data);
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   displayUserCategories();
-  // }, []);
-
   return (
-    <section className="category">
+    <section className="expenseSection">
       {/* <button onClick={() => setDisplayInput(!displayInput)}>+</button>
       {displayInput ? <AddUserCategory /> : null} */}
       {/* <DisplayCategory category={defaultCategory} /> */}
@@ -45,6 +31,7 @@ const Category = (props) => {
           onChange={(e) => setValue(e.target.value)}
           type="select"
           name="category"
+          className="category"
           id="category"
         >
           <option value="default" disabled>

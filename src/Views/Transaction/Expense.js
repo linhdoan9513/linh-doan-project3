@@ -16,14 +16,13 @@ const Expense = (props) => {
   }, []);
 
   let formattedDatabase = useFormat(expense);
-
   let totalExpense = useTotal(formattedDatabase);
 
   return (
     <section className="itemSection">
-      <p>Total Expense: {totalExpense.toFixed(2)}</p>
       <ExpenseForm categoryChoice={props.categoryChoice} />
-      <DisplayTransaction expense={expense} />
+      <DisplayTransaction expense={expense} />{" "}
+      <p>Total Expense: {totalExpense.toFixed(2)}</p>
     </section>
   );
 };

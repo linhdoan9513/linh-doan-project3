@@ -7,7 +7,7 @@ import Income from "./Views/Income/Income";
 const App = () => {
   return (
     <>
-      <header>
+      <header className="wrapper">
         <h1>
           <span>
             <img className="logo" src={money} alt="wallet" />
@@ -15,7 +15,7 @@ const App = () => {
           Budget Planner
         </h1>
       </header>
-      <main>
+      <main className="wrapper">
         <Category />
         <Income />
       </main>

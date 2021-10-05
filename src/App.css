@@ -24,6 +24,10 @@ input, option, select, button {
   font-family: 'Poppins',sans-serif;
 }
 
+.wrapper {
+  margin: 0 auto;
+}
+
 img {
   max-width: 100%;
 }
@@ -37,6 +41,27 @@ span {
   height: auto;
   margin-right: 20px;
 }
+
+form {
+  display: flex; 
+  flex-direction: column;
+}
+
+label {
+  margin-right: 10px;
+  width: 200px;
+}
+
+input {
+  width: 200px;
+}
+
+
+.category {
+  width: 200px;
+  height: 40px;
+}
+
 
 
 
