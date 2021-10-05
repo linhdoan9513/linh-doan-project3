@@ -14,11 +14,7 @@ const IncomeForm = (props) => {
       addData("income/", {
         category: props.choice,
         amount: parseFloat(incomeValue),
-        date: {
-          year: selectedDate.getFullYear(),
-          month: selectedDate.getMonth() + 1,
-          date: selectedDate.getDate(),
-        },
+        date: selectedDate.toISOString(),
       });
     } else {
       alert("please enter sth");

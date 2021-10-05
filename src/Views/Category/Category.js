@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import DisplayCategory from "./DisplayUserCategory";
-import Item from "../Item/Item";
+import Expense from "../Transaction/Expense";
 
 const Category = (props) => {
   const [value, setValue] = useState("default");
@@ -59,7 +59,7 @@ const Category = (props) => {
           })}
         </select>
       </form>
-      <Item categoryChoice={value} allCategories={defaultCategory.sort()} />
+      <Expense categoryChoice={value} allCategories={defaultCategory.sort()} />
     </section>
   );
 };

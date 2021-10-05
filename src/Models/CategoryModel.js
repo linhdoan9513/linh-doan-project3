@@ -22,9 +22,9 @@ const addData = (parentNode, categoryName) => {
   push(ref(db, parentNode), categoryName);
 };
 
-const deleteCategory = (categoryName) => {
+const deleteData = (parentNode, categoryName) => {
   const db = getDatabase(firebaseApp);
-  return remove(ref(db, "user1/expense/" + categoryName));
+  return remove(ref(db, parentNode + categoryName));
 };
 
 // const getCategory = (categoryName, callback) => {
@@ -51,7 +51,7 @@ const getUserCategories = (callback) => {
 
 // this exports the CONFIGURED version of firebase
 export {
-  deleteCategory,
+  deleteData,
   // getCategory,
   getData,
   addData,

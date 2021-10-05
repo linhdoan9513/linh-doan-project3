@@ -10,7 +10,7 @@ const App = () => {
       <header>
         <h1>
           <span>
-            <img className="logo" src={money} alt="wallet image" />
+            <img className="logo" src={money} alt="wallet" />
           </span>
           Budget Planner
         </h1>
