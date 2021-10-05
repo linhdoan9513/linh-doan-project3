@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import money from "./assets/money.png";
 
 import Category from "./Views/Category/Category";
