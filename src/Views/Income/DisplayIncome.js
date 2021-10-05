@@ -9,15 +9,15 @@ const DisplayIncome = ({ income, list }) => {
   console.log(incomeObject);
 
   return (
-    <div>
+    <div className="incomeDisplay">
       <p>Total Income: {totalIncome} </p>
-      <ul>
+      <ul className="incomeCategory">
         {Object.entries(incomeObject).map((eachIncome) => {
           return (
             <li key={eachIncome[0]}>
-              <p>
-                {eachIncome[0]} : {eachIncome[1]}
-              </p>
+              <p className="circle"></p>
+              <p>{eachIncome[0]}</p>
+              <p> {eachIncome[1]}</p>
             </li>
           );
         })}

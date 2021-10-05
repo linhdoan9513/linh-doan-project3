@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 @import  '_setup';
+@import '_incomeDisplay';
 
 body {
-  padding: 0 100px;
-  max-width: 1280px;
   background-color: #3C3147;
   color: white;
-  margin: 0; 
-  padding: 0 100px;
   font-family: 'Poppins',sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 input, option, select, button {
@@ -17,14 +23,13 @@ input, option, select, button {
 
 .wrapper {
   margin: 0 auto;
+  border: 2px solid red;
+  width: 90%;
+  max-width: 1280px;
 }
 
 img {
   max-width: 100%;
-}
-
-span {
-  display: inline-block;
 }
 
 .logo {
@@ -33,35 +38,26 @@ span {
   margin-right: 20px;
 }
 
-form {
-  display: flex; 
-  flex-direction: column;
-  button {
-    width: 200px;
-  }
-}
 
-label {
-  margin-right: 10px;
-  width: 200px;
-}
-
-select, .category, input {
-  width: 200px;
-  height: 30px;
-}
-
-.incomeSection {
-  border: 2px solid red;
-}
-
-.expenseSection {
-  border: 2px solid blue;
-}
 
 .expenseForm {
   border: 2px solid white;
 }
+
+main {
+  display: flex;
+  justify-content: space-between;
+  .incomeSection, .expenseSection {
+    width: calc(50% - 20px);
+  }
+
+  .expenseSection {
+    border: 2px solid blue;
+    margin-left: 20px;
+  }
+}
+
+
 
 
 

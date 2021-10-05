@@ -265,14 +265,42 @@ html {
   overflow: hidden;
 }
 
+.incomeCategory {
+  display: flex;
+  justify-content: space-between;
+}
+.incomeCategory li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.incomeCategory .circle {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: #861657;
+  background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+  border-radius: 50%;
+}
+.incomeCategory p {
+  padding: 0;
+  margin: 10px;
+}
+
 body {
-  padding: 0 100px;
-  max-width: 1280px;
   background-color: #3C3147;
   color: white;
-  margin: 0;
-  padding: 0 100px;
   font-family: "Poppins", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 input, option, select, button {
@@ -281,14 +309,13 @@ input, option, select, button {
 
 .wrapper {
   margin: 0 auto;
+  border: 2px solid red;
+  width: 90%;
+  max-width: 1280px;
 }
 
 img {
   max-width: 100%;
-}
-
-span {
-  display: inline-block;
 }
 
 .logo {
@@ -297,32 +324,18 @@ span {
   margin-right: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-form button {
-  width: 200px;
-}
-
-label {
-  margin-right: 10px;
-  width: 200px;
-}
-
-select, .category, input {
-  width: 200px;
-  height: 30px;
-}
-
-.incomeSection {
-  border: 2px solid red;
-}
-
-.expenseSection {
-  border: 2px solid blue;
-}
-
 .expenseForm {
   border: 2px solid white;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+main .incomeSection, main .expenseSection {
+  width: calc(50% - 20px);
+}
+main .expenseSection {
+  border: 2px solid blue;
+  margin-left: 20px;
 }/*# sourceMappingURL=App.css.map */

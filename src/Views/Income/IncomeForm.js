@@ -23,27 +23,25 @@ const IncomeForm = ({ choice }) => {
   };
 
   return (
-    <div className="incomeForm">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Amount</label>
-        <input
-          type="number"
-          name="amount"
-          step="any"
-          pattern="[0-9]*"
-          required
-          placeholder="Enter Income"
-          onChange={(e) => setIncomeValue(e.target.value)}
+    <form className="incomeForm" onSubmit={handleSubmit}>
+      <label htmlFor="email"></label>
+      <input
+        type="number"
+        name="amount"
+        step="any"
+        pattern="[0-9]*"
+        required
+        placeholder="Enter Income"
+        onChange={(e) => setIncomeValue(e.target.value)}
+      />
+      <div className="date" onChange={(e) => setIncomeValue(e.target.value)}>
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
         />
-        <div className="date" onChange={(e) => setIncomeValue(e.target.value)}>
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-          />
-        </div>
-        <button type="submit">Add Income</button>
-      </form>
-    </div>
+      </div>
+      <button type="submit">Add Income</button>
+    </form>
   );
 };
 

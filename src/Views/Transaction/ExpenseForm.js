@@ -32,7 +32,7 @@ const ExpenseForm = ({ categoryChoice }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="expense">Expense</label>
+      <label htmlFor="expense"></label>
       <input
         type="text"
         name="expense"
@@ -40,7 +40,7 @@ const ExpenseForm = ({ categoryChoice }) => {
         required
         onChange={(e) => setExpenseName(e.target.value)}
       />
-      <label htmlFor="email">Amount</label>
+      <label htmlFor="email"></label>
       <input
         type="number"
         name="amount"
