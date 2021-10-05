@@ -16,6 +16,7 @@ const Expense = (props) => {
   }, []);
 
   let formattedDatabase = useFormat(expense);
+
   let totalExpense = useTotal(formattedDatabase);
 
   return (

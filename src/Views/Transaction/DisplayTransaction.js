@@ -20,7 +20,6 @@ const DisplayTransaction = (props) => {
     <div>
       <ul>
         {Object.entries(list).map((eachItem) => {
-          console.log(eachItem);
           return (
             <li key={eachItem[0]}>
               <p>

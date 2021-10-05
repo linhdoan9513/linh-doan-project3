@@ -16,8 +16,6 @@ const IncomeForm = (props) => {
         amount: parseFloat(incomeValue),
         date: selectedDate.toISOString(),
       });
-    } else {
-      alert("please enter sth");
     }
     setSelectedDate(new Date());
     setIncomeValue("");
