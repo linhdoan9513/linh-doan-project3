@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
 
-const IncomeForm = (props) => {
+const IncomeForm = ({ choice }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [incomeValue, setIncomeValue] = useState("");
 
@@ -12,7 +12,7 @@ const IncomeForm = (props) => {
     event.preventDefault();
     if (incomeValue !== "") {
       addData("income/", {
-        category: props.choice,
+        category: choice,
         amount: parseFloat(incomeValue),
         date: selectedDate.toISOString(),
       });

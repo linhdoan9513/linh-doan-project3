@@ -1,6 +1,5 @@
-import "./App.scss";
+import "./styles/scss/App.scss";
 import money from "./assets/money.png";
-
 import Category from "./Views/Category/Category";
 import Income from "./Views/Income/Income";
 
@@ -16,8 +15,8 @@ const App = () => {
         </h1>
       </header>
       <main className="wrapper">
-        <Category />
         <Income />
+        <Category />
       </main>
     </>
   );

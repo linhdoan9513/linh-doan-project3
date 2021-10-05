@@ -4,8 +4,8 @@ import "react-datepicker/dist/react-datepicker-cssmodules.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { addData } from "../../Models/CategoryModel";
 
-const ExpenseForm = (props) => {
-  let categoryName = props.categoryChoice;
+const ExpenseForm = ({ categoryChoice }) => {
+  let categoryName = categoryChoice;
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [expenseName, setExpenseName] = useState("");
   const [expenseValue, setExpenseValue] = useState("");
@@ -19,8 +19,6 @@ const ExpenseForm = (props) => {
         amount: parseFloat(expenseValue),
         date: selectedDate.toISOString(),
       });
-    } else {
-      alert("please enter sth");
     }
     setSelectedDate(new Date());
     setExpenseName("");
@@ -33,35 +31,33 @@ const ExpenseForm = (props) => {
   };
 
   return (
-    <div className="expenseForm">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="expense">Expense</label>
-        <input
-          type="text"
-          name="expense"
-          placeholder="Enter transaction"
-          required
-          onChange={(e) => setExpenseName(e.target.value)}
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="expense">Expense</label>
+      <input
+        type="text"
+        name="expense"
+        placeholder="Enter transaction"
+        required
+        onChange={(e) => setExpenseName(e.target.value)}
+      />
+      <label htmlFor="email">Amount</label>
+      <input
+        type="number"
+        name="amount"
+        onChange={handleChange}
+        step="any"
+        pattern="[0-9]*"
+        required
+        placeholder="Enter amount"
+      />
+      <div className="date" onChange={handleChange}>
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
         />
-        <label htmlFor="email">Amount</label>
-        <input
-          type="number"
-          name="amount"
-          onChange={handleChange}
-          step="any"
-          pattern="[0-9]*"
-          required
-          placeholder="Enter amount"
-        />
-        <div className="date" onChange={handleChange}>
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-          />
-        </div>
-        <button type="submit">Add expense</button>
-      </form>
-    </div>
+      </div>
+      <button type="submit">Add expense</button>
+    </form>
   );
 };
 

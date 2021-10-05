@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { deleteData } from "../../Models/CategoryModel";
 
-const DisplayTransaction = (props) => {
+const DisplayTransaction = ({ expense }) => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    if (props.expense !== undefined) {
-      setList(props.expense);
+    if (expense !== undefined) {
+      setList(expense);
     }
-  }, [props.expense]);
+  }, [expense]);
 
   const handleClick = (e) => {
     deleteData("expense/", e.target.name);
@@ -21,11 +21,11 @@ const DisplayTransaction = (props) => {
       <ul>
         {Object.entries(list).map((eachItem) => {
           return (
-            <li key={eachItem[0]}>
+            <li key={eachItem[1][0]}>
               <p>
-                {eachItem[1].expense} : {eachItem[1].amount}
+                {eachItem[1][1].expense} : {eachItem[1][1].amount}
               </p>
-              <button onClick={handleClick} name={eachItem[0]}>
+              <button onClick={handleClick} name={eachItem[1][0]}>
                 <FontAwesomeIcon icon={faTrash} />
               </button>
             </li>

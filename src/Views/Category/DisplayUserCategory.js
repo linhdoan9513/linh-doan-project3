@@ -1,7 +1,7 @@
-const DisplayUserCategory = (props) => {
+const DisplayUserCategory = ({ category }) => {
   return (
     <ul>
-      {props.category.map((eachCategory) => {
+      {category.map((eachCategory) => {
         return (
           <li key={eachCategory}>
             <p>{eachCategory}</p>

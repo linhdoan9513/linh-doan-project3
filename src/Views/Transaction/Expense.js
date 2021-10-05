@@ -1,11 +1,10 @@
-import ExpenseForm from "./ExpenseForm";
 import { getData } from "../../Models/CategoryModel";
 import { useEffect, useState } from "react";
 import useFormat from "../CustomHooks/useFormat";
 import useTotal from "../CustomHooks/useTotal";
 import DisplayTransaction from "../Transaction/DisplayTransaction";
 
-const Expense = (props) => {
+const Expense = () => {
   const [expense, setExpense] = useState([]);
 
   useEffect(() => {
@@ -20,8 +19,7 @@ const Expense = (props) => {
 
   return (
     <section className="itemSection">
-      <ExpenseForm categoryChoice={props.categoryChoice} />
-      <DisplayTransaction expense={expense} />{" "}
+      <DisplayTransaction expense={formattedDatabase} />
       <p>Total Expense: {totalExpense.toFixed(2)}</p>
     </section>
   );

@@ -1,17 +1,6 @@
-import { useState, useEffect } from "react";
-
 const useHashMap = (dbCategory, defaultCategory) => {
-  let array = dbCategory;
-  const [data, setData] = useState([]);
-
   const categoryTypes = defaultCategory;
   let categoryObject = {};
-
-  useEffect(() => {
-    if (array !== undefined) {
-      setData(array);
-    }
-  }, [array]);
 
   const categoryTypeMap = () => {
     for (let i = 0; i < categoryTypes.length; i++) {
@@ -19,15 +8,16 @@ const useHashMap = (dbCategory, defaultCategory) => {
     }
     return categoryObject;
   };
-
   categoryTypeMap();
+
   const categoryAmountMap = () => {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].category in categoryObject) {
-        categoryObject[data[i].category] += data[i].amount;
+    for (let i = 0; i < dbCategory.length; i++) {
+      if (dbCategory[i][1].category in categoryObject) {
+        categoryObject[dbCategory[i][1].category] += dbCategory[i][1].amount;
       }
     }
   };
+
   categoryAmountMap();
   return categoryObject;
 };
