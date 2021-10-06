@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 import DisplayExpenseEntries from "./DisplayExpenseEntries";
 import DisplayExpenseCategory from "./DisplayExpenseCategory";

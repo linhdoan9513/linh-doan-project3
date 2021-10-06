@@ -280,6 +280,18 @@ main .individualSection .incomeSection {
 main .individualSection .expenseSection {
   width: calc(50% - 50px);
 }
+main .summarySection {
+  box-shadow: #65FFDA 0px 8px 24px;
+  padding: 50px 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+main .summarySection p {
+  font-size: 20px;
+  font-weight: 700;
+}
 main .pieChart {
   height: 500px;
   width: auto;

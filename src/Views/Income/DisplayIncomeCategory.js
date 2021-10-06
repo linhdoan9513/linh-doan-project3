@@ -1,10 +1,7 @@
-import { runTotal } from "../CustomFunctions/runTotal";
 import { runHashMap } from "../CustomFunctions/runHashMap";
 import money from "../../assets/money.png";
 
 const DisplayIncomeCategory = ({ income, list }) => {
-  let incomeArray = income;
-  let totalIncome = runTotal(incomeArray);
   let incomeObject = runHashMap(income, list);
 
   return (

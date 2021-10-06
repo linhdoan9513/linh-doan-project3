@@ -5,6 +5,7 @@ import Income from "./Views/Income/Income";
 import { getData } from "./Models/CategoryModel";
 import { useState, useEffect } from "react";
 import { addFormat } from "./Views/CustomFunctions/addFormat";
+import Summary from "./Summary";
 
 const App = () => {
   const [income, setIncome] = useState([]);
@@ -17,7 +18,7 @@ const App = () => {
     });
   }, []);
 
-  let formattedDatabase = addFormat(income);
+  let sortedIncome = addFormat(income);
 
   useEffect(() => {
     getData("expense/", (snapshot) => {
@@ -26,7 +27,7 @@ const App = () => {
     });
   }, []);
 
-  const sortedTransactions = addFormat(expense);
+  const sortedExpense = addFormat(expense);
 
   return (
     <>
@@ -39,11 +40,11 @@ const App = () => {
         </h1>
       </header>
       <main className="wrapper">
+        <Summary expense={sortedExpense} income={sortedIncome} />
         <div className="individualSection">
-          <Income income={formattedDatabase} />
-          <Expense expense={sortedTransactions} />
+          <Income income={sortedIncome} />
+          <Expense expense={sortedExpense} />
         </div>
-        <div className="pieChart"></div>
       </main>
     </>
   );
