@@ -24,7 +24,7 @@ const IncomeForm = ({ choice }) => {
 
   return (
     <form className="incomeForm" onSubmit={handleSubmit}>
-      <label htmlFor="email"></label>
+      <label htmlFor="income">Income: </label>
       <input
         type="number"
         name="amount"

@@ -19,9 +19,9 @@ const DisplayIncomeEntries = ({ income }) => {
             <li key={eachItem[1][0]}>
               <div>
                 <p>{eachItem[1][1].category}</p>
-                <p>Date: {date}</p>
+                <p className="date">Date: {date}</p>
               </div>
-              <p>$ {eachItem[1][1].amount}</p>
+              <p className="amount">$ {eachItem[1][1].amount}</p>
             </li>
           );
         })}

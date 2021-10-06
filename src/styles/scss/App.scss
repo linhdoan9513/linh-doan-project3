@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 @import  '_setup';
-@import '_incomeDisplay';
 @import '_vars';
+@import '_incomeDisplay';
+@import '_incomeForm';
 
 body {
   font-family: $primaryFont;
+  background-color: $navy;
+  color: white;
 }
 
 ul {
@@ -22,7 +25,6 @@ input, option, select, button {
 
 .wrapper {
   margin: 0 auto;
-  border: 2px solid red;
   width: 90%;
   max-width: 1280px;
 }
@@ -42,30 +44,55 @@ span {
 }
 
 h1 {
-  color: $orange;
+  color: $mint;
+  padding: 0 20px;
 }
 
 
 h2 {
   color: $green;
+  font-size: 30px;
 }
 
+h3 {
+  color: $green;
+  font-size: 25px;
+}
+
+select {
+  border: none;
+  border-bottom: 2px solid $darkblue;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+input {
+  border: 1px dotted $green;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 30px;
+}
 
 main {
   display: flex;
   justify-content: space-between;
   .incomeSection, .expenseSection {
-    width: calc(50% - 20px);
+    width: calc(50% - 40px);
+     box-shadow: $mint 0px 8px 24px;
   }
 
   .incomeSection {
-     border: 2px solid blue;
-     padding: 50px 0;
+     padding: 50px 20px;
   }
 
   .expenseSection {
-    border: 2px solid blue;
-
     padding: 50px 0;
   }
 

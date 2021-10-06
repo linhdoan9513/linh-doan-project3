@@ -281,17 +281,40 @@ html {
   text-align: center;
 }
 .incomeCategory li p:nth-child(2) {
-  color: #4048cc;
+  color: #e39d61;
   font-weight: 700;
 }
 
 .incomeEntries ul li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.incomeEntries ul li p:first-child {
+  font-weight: 700;
+  font-size: 20px;
+}
+.incomeEntries ul li .date {
+  opacity: 0.6;
+}
+.incomeEntries li {
+  border-bottom: 1px solid grey;
+}
+.incomeEntries li .amount {
+  font-size: 18px;
+}
+
+.incomeForm button {
+  border: none;
+  color: #61CDBB;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #020C1B;
+  color: white;
 }
 
 ul {
@@ -309,7 +332,6 @@ input, option, select, button {
 
 .wrapper {
   margin: 0 auto;
-  border: 2px solid red;
   width: 90%;
   max-width: 1280px;
 }
@@ -329,11 +351,39 @@ span {
 }
 
 h1 {
-  color: #F47660;
+  color: #65FFDA;
+  padding: 0 20px;
 }
 
 h2 {
   color: #61CDBB;
+  font-size: 30px;
+}
+
+h3 {
+  color: #61CDBB;
+  font-size: 25px;
+}
+
+select {
+  border: none;
+  border-bottom: 2px solid #0081a7;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+input {
+  border: 1px dotted #61CDBB;
+  margin-bottom: 20px;
+  width: 200px;
+  height: 30px;
 }
 
 main {
@@ -341,14 +391,13 @@ main {
   justify-content: space-between;
 }
 main .incomeSection, main .expenseSection {
-  width: calc(50% - 20px);
+  width: calc(50% - 40px);
+  box-shadow: #65FFDA 0px 8px 24px;
 }
 main .incomeSection {
-  border: 2px solid blue;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 main .expenseSection {
-  border: 2px solid blue;
   padding: 50px 0;
 }
 main .pieChart {

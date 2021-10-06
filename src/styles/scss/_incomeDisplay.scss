@@ -1,5 +1,8 @@
 @import '_vars';
 
+
+
+
 .incomeCategory {
     display: flex;
     justify-content: space-between;
@@ -16,17 +19,34 @@
         }
         
         p:nth-child(2) {
-            color: $purpleBlue;
+            color: $yellow;
             font-weight: 700;
         }
     } 
 }
 
 .incomeEntries {
+
     ul li {
         display: flex; 
         justify-content: space-between;
+        align-items: center;
 
-        p:firs
+        p:first-child {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .date {
+            opacity: 0.6;
+        }
+    }
+
+
+    li {
+        border-bottom: 1px solid grey;
+        .amount {
+            font-size: 18px;
+        }
     }
 }
