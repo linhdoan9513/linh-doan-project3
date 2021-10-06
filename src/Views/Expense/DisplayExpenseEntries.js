@@ -22,7 +22,6 @@ const DisplayExpenseEntries = ({ expense }) => {
       <ul>
         {Object.entries(list).map((eachItem) => {
           const date = new Date(eachItem[1][1].date).toDateString();
-          console.log(eachItem);
           return (
             <li key={eachItem[1][0]}>
               <div>
