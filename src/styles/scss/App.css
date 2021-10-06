@@ -328,7 +328,6 @@ main .pieChart {
 }
 .incomeEntries ul li p:first-child {
   font-weight: 700;
-  font-size: 20px;
 }
 .incomeEntries ul li .date {
   opacity: 0.6;
@@ -337,7 +336,6 @@ main .pieChart {
   border-bottom: 1px solid #65FFDA;
 }
 .incomeEntries li .amount {
-  font-size: 20px;
   font-weight: 700;
 }
 .incomeEntries .incomeAmount {
@@ -395,7 +393,6 @@ main .pieChart {
 }
 .expenseEntries ul li p:first-child {
   font-weight: 700;
-  font-size: 20px;
 }
 .expenseEntries ul li .date {
   opacity: 0.6;
@@ -434,6 +431,11 @@ main .pieChart {
   }
   main .individualSection .expenseSection {
     width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    padding: 0;
   }
 }
 body {
