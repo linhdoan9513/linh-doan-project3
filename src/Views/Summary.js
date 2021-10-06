@@ -1,4 +1,4 @@
-import { runTotal } from "./Views/CustomFunctions/runTotal";
+import { runTotal } from "./CustomFunctions/runTotal";
 const Summary = ({ expense, income }) => {
   const totalIncome = runTotal(income);
   const totalExpense = runTotal(expense);
