@@ -20,9 +20,7 @@ const Category = ({ categoryChoice }) => {
 
   return (
     <section className="expenseSection">
-      {/* <button onClick={() => setDisplayInput(!displayInput)}>+</button>
-      {displayInput ? <AddUserCategory /> : null} */}
-      {/* <DisplayCategory category={defaultCategory} /> */}
+      <h2>Expense</h2>
       <div className="expenseForm">
         <form>
           <label htmlFor="category" className="sr-only">

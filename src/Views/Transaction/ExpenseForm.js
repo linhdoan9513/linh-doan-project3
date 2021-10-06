@@ -32,24 +32,26 @@ const ExpenseForm = ({ categoryChoice }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="expense"></label>
-      <input
-        type="text"
-        name="expense"
-        placeholder="Enter transaction"
-        required
-        onChange={(e) => setExpenseName(e.target.value)}
-      />
-      <label htmlFor="email"></label>
-      <input
-        type="number"
-        name="amount"
-        onChange={handleChange}
-        step="any"
-        pattern="[0-9]*"
-        required
-        placeholder="Enter amount"
-      />
+      <div className="expenseInput">
+        <label htmlFor="expense">Daily Transaction: </label>
+        <input
+          type="text"
+          name="expense"
+          placeholder="Enter transaction"
+          required
+          onChange={(e) => setExpenseName(e.target.value)}
+        />
+        <label htmlFor="email">Amount: </label>
+        <input
+          type="number"
+          name="amount"
+          onChange={handleChange}
+          step="any"
+          pattern="[0-9]*"
+          required
+          placeholder="Enter amount"
+        />
+      </div>
       <div className="date" onChange={handleChange}>
         <DatePicker
           selected={selectedDate}
