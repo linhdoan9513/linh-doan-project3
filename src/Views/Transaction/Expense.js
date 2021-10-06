@@ -19,8 +19,8 @@ const Expense = () => {
 
   return (
     <section className="itemSection">
-      <DisplayTransaction expense={formattedDatabase} />
       <p>Total Expense: {totalExpense.toFixed(2)}</p>
+      <DisplayTransaction expense={formattedDatabase} />
     </section>
   );
 };

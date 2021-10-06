@@ -8,15 +8,16 @@ const App = () => {
     <>
       <header className="wrapper">
         <h1>
+          Budget Planner
           <span>
             <img className="logo" src={money} alt="wallet" />
           </span>
-          Budget Planner
         </h1>
       </header>
       <main className="wrapper">
         <Income />
         <Category />
+        <div className="pieChart"></div>
       </main>
     </>
   );

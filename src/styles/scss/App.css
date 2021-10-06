@@ -275,22 +275,17 @@ html {
   justify-content: center;
   align-items: center;
 }
-.incomeCategory .circle {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  background-color: #861657;
-  background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
-  border-radius: 50%;
-}
-.incomeCategory p {
+.incomeCategory li p {
   padding: 0;
   margin: 10px;
+  text-align: center;
+}
+.incomeCategory li p:nth-child(2) {
+  color: #4048cc;
+  font-weight: 700;
 }
 
 body {
-  background-color: #3C3147;
-  color: white;
   font-family: "Poppins", sans-serif;
 }
 
@@ -321,11 +316,19 @@ img {
 .logo {
   width: 40px;
   height: auto;
-  margin-right: 20px;
 }
 
-.expenseForm {
-  border: 2px solid white;
+span {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+h1 {
+  color: #F47660;
+}
+
+h2 {
+  color: #61CDBB;
 }
 
 main {
@@ -335,7 +338,16 @@ main {
 main .incomeSection, main .expenseSection {
   width: calc(50% - 20px);
 }
+main .incomeSection {
+  border: 2px solid blue;
+  padding: 50px 0;
+}
 main .expenseSection {
   border: 2px solid blue;
   margin-left: 20px;
+  padding: 50px 0;
+}
+main .pieChart {
+  height: 500px;
+  width: auto;
 }/*# sourceMappingURL=App.css.map */

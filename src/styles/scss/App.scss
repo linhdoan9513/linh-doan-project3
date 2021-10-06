@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 @import  '_setup';
 @import '_incomeDisplay';
+@import '_vars';
 
 body {
-  background-color: #3C3147;
-  color: white;
-  font-family: 'Poppins',sans-serif;
+  font-family: $primaryFont;
 }
 
 ul {
@@ -35,14 +34,22 @@ img {
 .logo {
   width: 40px; 
   height: auto;
-  margin-right: 20px;
+}
+
+span {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+h1 {
+  color: $orange;
 }
 
 
-
-.expenseForm {
-  border: 2px solid white;
+h2 {
+  color: $green;
 }
+
 
 main {
   display: flex;
@@ -51,10 +58,22 @@ main {
     width: calc(50% - 20px);
   }
 
+  .incomeSection {
+     border: 2px solid blue;
+     padding: 50px 0;
+  }
+
   .expenseSection {
     border: 2px solid blue;
     margin-left: 20px;
+    padding: 50px 0;
   }
+
+  .pieChart {
+    height: 500px;
+    width: auto;
+  }
+  
 }
 
 
