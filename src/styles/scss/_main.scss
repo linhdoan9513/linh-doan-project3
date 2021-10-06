@@ -1,20 +1,22 @@
 main {
-  display: flex;
-  justify-content: space-between;
-  .incomeSection, .expenseSection {
-    box-shadow: $mint 0px 8px 24px;
-    padding: 20px;
-  }
+  
+  .individualSection{ 
+    display: flex;
+    justify-content: space-between;
+    .incomeSection, .expenseSection {
+      box-shadow: $mint 0px 8px 24px;
+      padding: 20px;
+    }
 
-  .incomeSection {
-    width: 50%;
-    margin-right: 40px;
-  }
+    .incomeSection {
+      width: 50%;
+      margin-right: 40px;
+    }
 
-  .expenseSection {
-    width: calc(50% - 50px);
+    .expenseSection {
+      width: calc(50% - 50px);
+    }
   }
-
 
   .pieChart {
     height: 500px;

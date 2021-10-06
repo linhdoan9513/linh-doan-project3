@@ -265,19 +265,19 @@ html {
   overflow: hidden;
 }
 
-main {
+main .individualSection {
   display: flex;
   justify-content: space-between;
 }
-main .incomeSection, main .expenseSection {
+main .individualSection .incomeSection, main .individualSection .expenseSection {
   box-shadow: #65FFDA 0px 8px 24px;
   padding: 20px;
 }
-main .incomeSection {
+main .individualSection .incomeSection {
   width: 50%;
   margin-right: 40px;
 }
-main .expenseSection {
+main .individualSection .expenseSection {
   width: calc(50% - 50px);
 }
 main .pieChart {
