@@ -291,6 +291,8 @@ main .summarySection {
 main .summarySection p {
   font-size: 20px;
   font-weight: 700;
+  color: white;
+  padding: 10px 20px;
 }
 main .pieChart {
   height: 500px;
@@ -300,6 +302,7 @@ main .pieChart {
 .incomeCategory {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .incomeCategory li {
   flex-direction: column;
@@ -310,9 +313,11 @@ main .pieChart {
   padding: 0;
   margin: 10px;
   text-align: center;
+  font-weight: 700;
 }
 .incomeCategory li p:nth-child(2) {
-  color: #e39d61;
+  color: #CCD6F6;
+  border-bottom: 1px dashed #65FFDA;
   font-weight: 700;
 }
 
@@ -375,10 +380,12 @@ main .pieChart {
   padding: 0;
   margin: 10px;
   text-align: center;
+  font-weight: 700;
 }
 .expenseCategory ul li p:nth-child(2) {
-  color: #e39d61;
+  color: #CCD6F6;
   font-weight: 700;
+  border-bottom: 1px dashed #65FFDA;
 }
 
 .expenseEntries ul li {
@@ -410,11 +417,25 @@ main .pieChart {
 
 .expenseContainer {
   display: flex;
+  flex-wrap: wrap;
 }
 .expenseContainer div:first-child {
   margin-right: 30px;
 }
 
+@media (max-width: 940px) {
+  main .individualSection {
+    flex-direction: column;
+  }
+  main .individualSection .incomeSection {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  main .individualSection .expenseSection {
+    width: 100%;
+  }
+}
 body {
   font-family: "Poppins", sans-serif;
   background-color: #020C1B;
@@ -448,7 +469,7 @@ img {
 }
 
 .logo {
-  width: 40px;
+  width: 60px;
   height: auto;
 }
 

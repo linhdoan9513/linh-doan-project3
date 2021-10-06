@@ -1,3 +1,4 @@
+//Create a higher function to calculate total for income and expense
 const runTotal = (formattedData) => {
   let total = 0;
   const calculateTotal = () => {

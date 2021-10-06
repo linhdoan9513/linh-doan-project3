@@ -3,6 +3,9 @@ import IncomeForm from "./IncomeForm";
 import DisplayIncomeCategory from "./DisplayIncomeCategory";
 import DisplayIncomeEntries from "./DisplayIncomeEntries";
 
+//IncomeList is the parent component for IncomeForm, DisplayIncomeEntries and DisplayIncomeCategory
+//IncomeList received income object as props from Income Parent and passed to 2 display components
+
 const IncomeList = ({ income }) => {
   const [value, setValue] = useState("default");
   const defaultIncome = [

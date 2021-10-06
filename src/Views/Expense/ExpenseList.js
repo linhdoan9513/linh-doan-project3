@@ -3,8 +3,13 @@ import ExpenseForm from "./ExpenseForm";
 import DisplayExpenseEntries from "./DisplayExpenseEntries";
 import DisplayExpenseCategory from "./DisplayExpenseCategory";
 
+//ExpenseList is the parent component for ExpenseForm, DisplayExpenseEntries and DisplayExpenseCategory
+//ExpenseList received expense object as props from Expense Parent and passed to 2 display component
+
 const ExpenseList = ({ expense }) => {
   const [value, setValue] = useState("default");
+
+  //Create default category so user can add individual transaction to the appropriate category and also to generate dropdown menu of all categories option
   const defaultCategory = [
     "Groceries",
     "Utilities",
@@ -44,11 +49,8 @@ const ExpenseList = ({ expense }) => {
         </select>
       </form>
       <ExpenseForm categoryChoice={value} />
-      <h3>Expense By Category</h3>
       <DisplayExpenseCategory expense={expense} list={defaultCategory} />
-      <div className="expenseDisplay">
-        <DisplayExpenseEntries expense={expense} />
-      </div>
+      <DisplayExpenseEntries expense={expense} />
     </div>
   );
 };

@@ -1,17 +1,11 @@
-import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { deleteData } from "../../Models/CategoryModel";
+import { deleteData } from "../../Models/firebaseModel";
+
+//Received income as props from IncomeList parent;
+//Import DeleteData from firebaseModel to handle user choice to delete input and delete it from firebase database;
 
 const DisplayIncomeEntries = ({ income }) => {
-  const [incomeEntries, setIncomeEntries] = useState([]);
-
-  useEffect(() => {
-    if (income.length > 0) {
-      setIncomeEntries(income);
-    }
-  }, [income]);
-
   const handleClick = (e) => {
     deleteData("income/", e.target.name);
   };
@@ -20,7 +14,7 @@ const DisplayIncomeEntries = ({ income }) => {
     <div className="incomeEntries">
       <h3>Income By Date</h3>
       <ul>
-        {Object.entries(incomeEntries).map((eachItem) => {
+        {Object.entries(income).map((eachItem) => {
           const date = new Date(eachItem[1][1].date).toDateString();
           return (
             <li key={eachItem[1][0]}>

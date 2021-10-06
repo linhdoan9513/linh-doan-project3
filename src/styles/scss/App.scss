@@ -5,7 +5,7 @@
 @import '_incomeDisplay';
 @import '_incomeForm';
 @import '_expenseDisplay';
-
+@import '_mediaQueries';
 
 body {
   font-family: $primaryFont;
@@ -40,7 +40,7 @@ img {
 }
 
 .logo {
-  width: 40px; 
+  width: 60px; 
   height: auto;
 }
 

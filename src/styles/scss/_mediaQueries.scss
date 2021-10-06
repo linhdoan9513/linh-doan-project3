@@ -1,0 +1,24 @@
+@media (max-width: 940px) {
+    main {
+        .individualSection {
+            flex-direction: column;
+              .incomeSection {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 30px;
+              }
+
+              .expenseSection {
+                  width: 100%;
+              }
+        }        
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+}

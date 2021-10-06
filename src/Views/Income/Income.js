@@ -1,5 +1,9 @@
 import IncomeList from "./IncomeList";
 
+//Receive income as props from App and passed to children components
+//Income Component as the top Parent of Income category
+//Generate IncomeList as direct child component and pass expense object aka firebase data
+
 const Income = ({ income }) => {
   return (
     <section className="incomeSection">

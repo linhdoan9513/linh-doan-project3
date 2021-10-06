@@ -1,6 +1,7 @@
 .incomeCategory {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     li {
         flex-direction: column;
@@ -10,17 +11,18 @@
             padding: 0;
             margin: 10px;
             text-align: center;
+            font-weight: 700;
         }
         
         p:nth-child(2) {
-            color: $yellow;
+            color: $grey;
+            border-bottom: 1px dashed $mint;
             font-weight: 700;
         }
     } 
 }
 
 .incomeEntries {
-
     ul li {
         display: flex; 
         justify-content: space-between;
@@ -41,7 +43,6 @@
         .amount {
             font-size: 20px;
             font-weight: 700;
-
         }
     }
 
@@ -52,7 +53,7 @@
             padding: 0 10px;
             margin-left: 10px;
             border: 1px dashed $mint;
-             border-radius: 20px;
+            border-radius: 20px;
         }
     }
 }

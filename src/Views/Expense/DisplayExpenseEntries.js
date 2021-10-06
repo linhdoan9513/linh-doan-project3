@@ -1,17 +1,11 @@
-import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { deleteData } from "../../Models/CategoryModel";
+import { deleteData } from "../../Models/firebaseModel";
+
+//Received expense as props from ExpenseList parent;
+//Import DeleteData from firebaseModel to handle user choice to delete input and delete it from firebase database;
 
 const DisplayExpenseEntries = ({ expense }) => {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    if (expense !== undefined) {
-      setList(expense);
-    }
-  }, [expense]);
-
   const handleClick = (e) => {
     deleteData("expense/", e.target.name);
   };
@@ -19,8 +13,9 @@ const DisplayExpenseEntries = ({ expense }) => {
   return (
     <div className="expenseEntries">
       <h3>Expense By Date</h3>
+      {/* Use map to loop through expense object and render all expense transaction by date from most recent to oldest transaction */}
       <ul>
-        {Object.entries(list).map((eachItem) => {
+        {Object.entries(expense).map((eachItem) => {
           const date = new Date(eachItem[1][1].date).toDateString();
           return (
             <li key={eachItem[1][0]}>
