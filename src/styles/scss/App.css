@@ -295,7 +295,8 @@ main .summarySection p {
   padding: 10px 20px;
 }
 main .pieChart {
-  height: 500px;
+  padding-top: 20px;
+  height: 450px;
   width: auto;
 }
 

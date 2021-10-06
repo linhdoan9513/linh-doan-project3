@@ -1,41 +1,42 @@
 import { ResponsivePie } from "@nivo/pie";
-const IncomeChart = ({ income }) => {
-  const data = [
-    {
-      id: "Rental Income",
-      label: "Rental",
-      value: ` $ ${income["Rental Income"]}`,
-      color: "hsl(320, 70%, 50%)",
-    },
-    {
-      id: "Employment Income",
-      label: "Employment",
-      value: income["Employment Income"],
-      color: "hsl(31, 70%, 50%)",
-    },
-    {
-      id: "Investment Income",
-      label: "Investment",
-      value: income["Investment Income"],
-      color: "hsl(112, 70%, 50%)",
-    },
-    {
-      id: "Other Income",
-      label: "Other",
-      value: income["Other Income"],
-      color: "hsl(43, 70%, 50%)",
-    },
-    {
-      id: "Retirement Income",
-      label: "Retirement",
-      value: income["Retirement Income"],
-      color: "hsl(186, 70%, 50%)",
-    },
-  ];
+
+const ExpenseChart = ({ expense }) => {
+  // const data = [
+  //   {
+  //     id: "Cash",
+  //     label: "Cash",
+  //     value: expense["Cash"],
+  //     color: "hsl(320, 70%, 50%)",
+  //   },
+  //   {
+  //     id: "Dinning Out",
+  //     label: "Dinning Out",
+  //     value: expense["Dinning Out"],
+  //     color: "hsl(31, 70%, 50%)",
+  //   },
+  //   {
+  //     id: "Education",
+  //     label: "Education",
+  //     value: expense["Education"],
+  //     color: "hsl(112, 70%, 50%)",
+  //   },
+  //   {
+  //     id: "Groceries",
+  //     label: "Groceries",
+  //     value: expense["Groceries"],
+  //     color: "hsl(43, 70%, 50%)",
+  //   },
+  //   {
+  //     id: "Health",
+  //     label: "Health",
+  //     value: expense["Retirement expense"],
+  //     color: "hsl(186, 70%, 50%)",
+  //   },
+  // ];
 
   return (
     <div className="pieChart">
-      <ResponsivePie
+      {/* <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
@@ -64,9 +65,10 @@ const IncomeChart = ({ income }) => {
             },
           },
         }}
-      />
+      /> */}
+      <h4>Hello</h4>
     </div>
   );
 };
 
-export default IncomeChart;
+export default ExpenseChart;

@@ -1,13 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { deleteData } from "../../Models/firebaseModel";
+import { deleteData, addTopData } from "../../Models/firebaseModel";
 
 //Received income as props from IncomeList parent;
 //Import DeleteData from firebaseModel to handle user choice to delete input and delete it from firebase database;
 
 const DisplayIncomeEntries = ({ income }) => {
+  //write condition so that when the expense object length have less than 1 item, add back the top parent category as 0 so it wont break the app. Here, the length is 2 instead of 1 because the parent node counted as 1.
   const handleClick = (e) => {
-    deleteData("income/", e.target.name);
+    if (income.length < 2) {
+      addTopData("income/", 0);
+      deleteData("income/", e.target.name);
+    } else {
+      deleteData("income/", e.target.name);
+    }
   };
 
   return (
@@ -25,7 +29,7 @@ const DisplayIncomeEntries = ({ income }) => {
               <div className="incomeAmount">
                 <p className="amount">$ {eachItem[1][1].amount}</p>
                 <button onClick={handleClick} name={eachItem[1][0]}>
-                  <FontAwesomeIcon icon={faTrash} />
+                  -
                 </button>
               </div>
             </li>

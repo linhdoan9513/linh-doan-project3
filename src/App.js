@@ -34,7 +34,7 @@ const App = () => {
     <>
       <header className="wrapper">
         <h1>
-          Budget Planner
+          Personal Wallet
           <span>
             <img className="logo" src={money} alt="wallet" />
           </span>
