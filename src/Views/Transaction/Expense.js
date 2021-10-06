@@ -2,9 +2,10 @@ import { getData } from "../../Models/CategoryModel";
 import { useEffect, useState } from "react";
 import { addFormat } from "../CustomFunctions/addFormat";
 import { runTotal } from "../CustomFunctions/runTotal";
-import DisplayTransaction from "../Transaction/DisplayTransaction";
+import DisplayExpenseEntries from "./DisplayExpenseEntries";
+import DisplayExpenseCategory from "./DisplayExpenseCategory";
 
-const Expense = () => {
+const Expense = ({ allCategories }) => {
   const [expense, setExpense] = useState([]);
 
   useEffect(() => {
@@ -14,17 +15,19 @@ const Expense = () => {
     });
   }, []);
 
-  let sortedTransactions = addFormat(expense);
-  let totalExpense = runTotal(sortedTransactions);
-  if (sortedTransactions.length > 0) {
-    var date = new Date(sortedTransactions[0][1].date);
-    console.log(date.toDateString());
-  }
+  const sortedTransactions = addFormat(expense);
+  const totalExpense = runTotal(sortedTransactions);
+
   return (
-    <section className="itemSection">
-      <p>Total Expense: {totalExpense.toFixed(2)}</p>
-      <DisplayTransaction expense={sortedTransactions} />
-    </section>
+    <div className="expenseDisplay">
+      <h2>Income By Category</h2>
+      {/* <p>Total Expense: {totalExpense.toFixed(2)}</p> */}
+      <DisplayExpenseCategory
+        expense={sortedTransactions}
+        list={allCategories}
+      />
+      <DisplayExpenseEntries expense={sortedTransactions} />
+    </div>
   );
 };
 

@@ -1,0 +1,65 @@
+.expenseInput {
+    button {
+        border: 1px dashed $mint;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+}
+
+.expenseCategory {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                padding: 0;
+                margin: 10px;
+                text-align: center;
+            }
+            
+            p:nth-child(2) {
+                color: $yellow;
+                font-weight: 700;
+            }
+        } 
+    }
+}
+
+.expenseEntries {
+    ul li {
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+
+        p:first-child {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .date {
+            opacity: 0.6;
+        }
+    }
+
+    li {
+        border-bottom: 1px solid $mint;
+        .amount {
+            font-size: 18px;
+        }
+    }
+}
+
+.expenseContainer {
+    display: flex;
+    div:first-child {
+        margin-right: 30px;
+    }
+}

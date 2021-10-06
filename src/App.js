@@ -1,6 +1,6 @@
 import "./styles/scss/App.scss";
 import money from "./assets/money.png";
-import Category from "./Views/Category/Category";
+import DefaultExpenseCategory from "./Views/Transaction/DefaultExpenseCategory";
 import Income from "./Views/Income/Income";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
       </header>
       <main className="wrapper">
         <Income />
-        <Category />
+        <DefaultExpenseCategory />
         <div className="pieChart"></div>
       </main>
     </>

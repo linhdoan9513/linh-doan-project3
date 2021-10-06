@@ -265,12 +265,31 @@ html {
   overflow: hidden;
 }
 
+main {
+  display: flex;
+  justify-content: space-between;
+}
+main .incomeSection, main .expenseSection {
+  box-shadow: #65FFDA 0px 8px 24px;
+  padding: 20px;
+}
+main .incomeSection {
+  width: 50%;
+  margin-right: 40px;
+}
+main .expenseSection {
+  width: calc(50% - 50px);
+}
+main .pieChart {
+  height: 500px;
+  width: auto;
+}
+
 .incomeCategory {
   display: flex;
   justify-content: space-between;
 }
 .incomeCategory li {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -311,11 +330,58 @@ html {
   border-radius: 20px;
 }
 
-.expenseForm button {
+.expenseInput button {
   border: 1px dashed #65FFDA;
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
+}
+
+.expenseCategory ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.expenseCategory ul li {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.expenseCategory ul li p {
+  padding: 0;
+  margin: 10px;
+  text-align: center;
+}
+.expenseCategory ul li p:nth-child(2) {
+  color: #e39d61;
+  font-weight: 700;
+}
+
+.expenseEntries ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.expenseEntries ul li p:first-child {
+  font-weight: 700;
+  font-size: 20px;
+}
+.expenseEntries ul li .date {
+  opacity: 0.6;
+}
+.expenseEntries li {
+  border-bottom: 1px solid #65FFDA;
+}
+.expenseEntries li .amount {
+  font-size: 18px;
+}
+
+.expenseContainer {
+  display: flex;
+}
+.expenseContainer div:first-child {
+  margin-right: 30px;
 }
 
 body {
@@ -395,24 +461,4 @@ input {
   margin-bottom: 20px;
   width: 200px;
   height: 30px;
-}
-
-main {
-  display: flex;
-  justify-content: space-between;
-}
-main .incomeSection, main .expenseSection {
-  box-shadow: #65FFDA 0px 8px 24px;
-  padding: 20px;
-}
-main .incomeSection {
-  width: 50%;
-  margin-right: 40px;
-}
-main .expenseSection {
-  width: calc(50% - 50px);
-}
-main .pieChart {
-  height: 500px;
-  width: auto;
 }/*# sourceMappingURL=App.css.map */

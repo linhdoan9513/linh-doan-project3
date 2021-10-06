@@ -1,11 +1,9 @@
 import { useState } from "react";
-// import DisplayCategory from "./DisplayUserCategory";
-import Expense from "../Transaction/Expense";
-import ExpenseForm from "../Transaction/ExpenseForm";
+import Expense from "./Expense";
+import ExpenseForm from "./ExpenseForm";
 
-const Category = ({ categoryChoice }) => {
+const DefaultExpenseCategory = ({ categoryChoice }) => {
   const [value, setValue] = useState("default");
-  // const [userCategories, setUserCategories] = useState([]);
   const defaultCategory = [
     "Groceries",
     "Utilities",
@@ -21,8 +19,8 @@ const Category = ({ categoryChoice }) => {
   return (
     <section className="expenseSection">
       <h2>Expense</h2>
-      <div className="expenseForm">
-        <form>
+      <div className="expenseInput">
+        <form className="expenseDropdown">
           <label htmlFor="category" className="sr-only">
             Select Category
           </label>
@@ -46,11 +44,11 @@ const Category = ({ categoryChoice }) => {
             })}
           </select>
         </form>
-        <ExpenseForm categoryChoice={categoryChoice} />
+        <ExpenseForm categoryChoice={value} />
       </div>
       <Expense categoryChoice={value} allCategories={defaultCategory.sort()} />
     </section>
   );
 };
 
-export default Category;
+export default DefaultExpenseCategory;

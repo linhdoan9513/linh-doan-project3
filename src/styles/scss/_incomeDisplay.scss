@@ -1,14 +1,8 @@
-@import '_vars';
-
-
-
-
 .incomeCategory {
     display: flex;
     justify-content: space-between;
 
     li {
-        display: flex; 
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -41,7 +35,6 @@
             opacity: 0.6;
         }
     }
-
 
     li {
         border-bottom: 1px solid $mint;
