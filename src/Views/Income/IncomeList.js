@@ -1,9 +1,9 @@
 import { useState } from "react";
 import IncomeForm from "./IncomeForm";
-import DisplayIncomeCategory from "./DisplayIncomeCategory";
-import DisplayIncomeEntries from "./DisplayIncomeEntries";
+import IncomeCategory from "./IncomeCategory";
+import IncomeEntries from "./IncomeEntries";
 
-//IncomeList is the parent component for IncomeForm, DisplayIncomeEntries and DisplayIncomeCategory
+//IncomeList is the parent component for IncomeForm, IncomeEntries and IncomeCategory
 //IncomeList received income object as props from Income Parent and passed to 2 display components
 
 const IncomeList = ({ income }) => {
@@ -44,8 +44,8 @@ const IncomeList = ({ income }) => {
         </form>
         <IncomeForm choice={value} />
       </div>
-      <DisplayIncomeCategory income={income} list={defaultIncome} />
-      <DisplayIncomeEntries income={income} />
+      <IncomeCategory income={income} list={defaultIncome} />
+      <IncomeEntries income={income} />
     </>
   );
 };
