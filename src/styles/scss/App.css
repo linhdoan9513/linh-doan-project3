@@ -332,7 +332,18 @@ main .pieChart {
   border-bottom: 1px solid #65FFDA;
 }
 .incomeEntries li .amount {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.incomeEntries .incomeAmount {
+  display: flex;
+  justify-content: space-between;
+}
+.incomeEntries .incomeAmount button {
+  padding: 0 10px;
+  margin-left: 10px;
+  border: 1px dashed #65FFDA;
+  border-radius: 20px;
 }
 
 .incomeForm button {
@@ -387,6 +398,14 @@ main .pieChart {
 }
 .expenseEntries li .amount {
   font-size: 18px;
+}
+.expenseEntries .expenseAmount {
+  display: flex;
+  justify-content: space-between;
+}
+.expenseEntries .expenseAmount button {
+  padding: 0 10px;
+  margin-left: 10px;
 }
 
 .expenseContainer {

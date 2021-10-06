@@ -44,7 +44,7 @@ const ExpenseList = ({ expense }) => {
         </select>
       </form>
       <ExpenseForm categoryChoice={value} />
-      <h3>Income By Category</h3>
+      <h3>Expense By Category</h3>
       <DisplayExpenseCategory expense={expense} list={defaultCategory} />
       <div className="expenseDisplay">
         <DisplayExpenseEntries expense={expense} />

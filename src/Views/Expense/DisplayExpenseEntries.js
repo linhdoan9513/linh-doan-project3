@@ -18,21 +18,21 @@ const DisplayExpenseEntries = ({ expense }) => {
 
   return (
     <div className="expenseEntries">
-      <h3>Income By Date</h3>
+      <h3>Expense By Date</h3>
       <ul>
         {Object.entries(list).map((eachItem) => {
           const date = new Date(eachItem[1][1].date).toDateString();
           return (
             <li key={eachItem[1][0]}>
-              <div>
+              <div className="expenseTitle">
                 <p>{eachItem[1][1].expense}</p>
                 <p className="date">Date: {date}</p>
               </div>
-              <div>
+              <div className="expenseAmount">
                 <p className="amount">$ {eachItem[1][1].amount}</p>
-                {/* <button onClick={handleClick} name={eachItem[1][0]}>
+                <button onClick={handleClick} name={eachItem[1][0]}>
                   <FontAwesomeIcon icon={faTrash} />
-                </button> */}
+                </button>
               </div>
             </li>
           );

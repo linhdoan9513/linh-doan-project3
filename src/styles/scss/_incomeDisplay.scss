@@ -39,7 +39,20 @@
     li {
         border-bottom: 1px solid $mint;
         .amount {
-            font-size: 18px;
+            font-size: 20px;
+            font-weight: 700;
+
+        }
+    }
+
+    .incomeAmount {
+        display: flex; 
+        justify-content: space-between;
+        button {
+            padding: 0 10px;
+            margin-left: 10px;
+            border: 1px dashed $mint;
+             border-radius: 20px;
         }
     }
 }
