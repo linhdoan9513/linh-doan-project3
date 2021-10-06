@@ -8,16 +8,30 @@ import { addFormat } from "./Views/CustomFunctions/addFormat";
 import Summary from "./Summary";
 import { ResponsivePie } from "@nivo/pie";
 
+//Import getData function from firebaseModel to get allData from firebase database for both expense and income
+//import higher level function
+
 const App = () => {
   const [income, setIncome] = useState([]);
   const [expense, setExpense] = useState([]);
 
+  //Set up useEffect to store data in state when the data is loaded back from firebase;
   useEffect(() => {
     getData("income/", (snapshot) => {
       const data = snapshot.val();
       setIncome(data);
     });
   }, []);
+
+  useEffect(() => {
+    getData("expense/", (snapshot) => {
+      const data = snapshot.val();
+      setExpense(data);
+    });
+  }, []);
+
+  const sortedExpense = addFormat(expense);
+  let sortedIncome = addFormat(income);
 
   const data = [
     {
@@ -52,17 +66,6 @@ const App = () => {
     },
   ];
 
-  let sortedIncome = addFormat(income);
-
-  useEffect(() => {
-    getData("expense/", (snapshot) => {
-      const data = snapshot.val();
-      setExpense(data);
-    });
-  }, []);
-
-  const sortedExpense = addFormat(expense);
-
   return (
     <>
       <header className="wrapper">
@@ -79,7 +82,8 @@ const App = () => {
           <Income income={sortedIncome} />
           <Expense expense={sortedExpense} />
         </div>
-        <div className="pieChart">
+        <footer>Created at Juno College of Technology by Linh Doan</footer>
+        {/* <div className="pieChart">
           {" "}
           <ResponsivePie
             data={data}
@@ -206,7 +210,7 @@ const App = () => {
               },
             }}
           />
-        </div>
+        </div> */}
       </main>
     </>
   );
