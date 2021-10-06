@@ -1,16 +1,15 @@
-import useTotal from "../CustomHooks/useTotal";
-import useHashMap from "../CustomHooks/useHashMap";
+import { runTotal } from "../CustomFunctions/runTotal";
+import { runHashMap } from "../CustomFunctions/runHashMap";
 import money from "../../assets/money.png";
 
 const DisplayIncomeCategory = ({ income, list }) => {
   let incomeArray = income;
-  let totalIncome = useTotal(incomeArray);
-  let incomeObject = useHashMap(income, list);
+  let totalIncome = runTotal(incomeArray);
+  let incomeObject = runHashMap(income, list);
 
   return (
     <div className="incomeDisplay">
-      <p>Total Income: {totalIncome} </p>
-      <h2>Income by Category </h2>
+      <h3>Income by Category </h3>
       <ul className="incomeCategory">
         {Object.entries(incomeObject).map((eachIncome) => {
           return (

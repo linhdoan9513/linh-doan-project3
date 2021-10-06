@@ -1,7 +1,7 @@
 import IncomeList from "./IncomeList";
 import { getData } from "../../Models/CategoryModel";
 import { useState, useEffect } from "react";
-import useFormat from "../CustomHooks/useFormat";
+import { addFormat } from "../CustomFunctions/addFormat";
 
 const Income = () => {
   const [income, setIncome] = useState([]);
@@ -13,10 +13,11 @@ const Income = () => {
     });
   }, []);
 
-  let formattedDatabase = useFormat(income);
+  let formattedDatabase = addFormat(income);
 
   return (
     <section className="incomeSection">
+      <h2>Income</h2>
       <IncomeList income={formattedDatabase} />
     </section>
   );

@@ -1,4 +1,4 @@
-const useHashMap = (dbCategory, defaultCategory) => {
+const runHashMap = (dbCategory, defaultCategory) => {
   const categoryTypes = defaultCategory;
   let categoryObject = {};
 
@@ -22,4 +22,4 @@ const useHashMap = (dbCategory, defaultCategory) => {
   return categoryObject;
 };
 
-export default useHashMap;
+export { runHashMap };

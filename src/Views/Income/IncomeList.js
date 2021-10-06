@@ -1,6 +1,7 @@
 import { useState } from "react";
 import IncomeForm from "./IncomeForm";
 import DisplayIncomeCategory from "./DisplayIncomeCategory";
+import DisplayIncomeEntries from "./DisplayIncomeEntries";
 
 const IncomeList = ({ income }) => {
   const [value, setValue] = useState("default");
@@ -41,6 +42,7 @@ const IncomeList = ({ income }) => {
         <IncomeForm choice={value} />
       </div>
       <DisplayIncomeCategory income={income} list={defaultIncome} />
+      <DisplayIncomeEntries income={income} />
     </>
   );
 };

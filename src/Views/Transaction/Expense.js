@@ -1,7 +1,7 @@
 import { getData } from "../../Models/CategoryModel";
 import { useEffect, useState } from "react";
-import useFormat from "../CustomHooks/useFormat";
-import useTotal from "../CustomHooks/useTotal";
+import { addFormat } from "../CustomFunctions/addFormat";
+import { runTotal } from "../CustomFunctions/runTotal";
 import DisplayTransaction from "../Transaction/DisplayTransaction";
 
 const Expense = () => {
@@ -14,13 +14,17 @@ const Expense = () => {
     });
   }, []);
 
-  let formattedDatabase = useFormat(expense);
-  let totalExpense = useTotal(formattedDatabase);
-
+  let sortedTransactions = addFormat(expense);
+  let totalExpense = runTotal(sortedTransactions);
+  if (sortedTransactions.length > 0) {
+    var date = new Date(sortedTransactions[0][1].date);
+    console.log(date.toDateString());
+  }
   return (
     <section className="itemSection">
       <p>Total Expense: {totalExpense.toFixed(2)}</p>
-      <DisplayTransaction expense={formattedDatabase} />
+      <p></p>
+      <DisplayTransaction expense={sortedTransactions} />
     </section>
   );
 };

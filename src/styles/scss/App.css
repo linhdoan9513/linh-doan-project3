@@ -285,6 +285,11 @@ html {
   font-weight: 700;
 }
 
+.incomeEntries ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -344,7 +349,6 @@ main .incomeSection {
 }
 main .expenseSection {
   border: 2px solid blue;
-  margin-left: 20px;
   padding: 50px 0;
 }
 main .pieChart {

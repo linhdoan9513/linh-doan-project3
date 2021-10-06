@@ -1,4 +1,4 @@
-const useTotal = (formattedData) => {
+const runTotal = (formattedData) => {
   let total = 0;
   const calculateTotal = () => {
     if (formattedData !== undefined) {
@@ -12,4 +12,4 @@ const useTotal = (formattedData) => {
   return total;
 };
 
-export default useTotal;
+export { runTotal };
