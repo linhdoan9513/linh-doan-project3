@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
 import ExpenseCategorySelection from "./ExpenseCategorySelection";
-import DisplayExpenseEntries from "./DisplayExpenseEntries";
-import DisplayExpenseCategory from "./DisplayExpenseCategory";
+import ExpenseEntries from "./ExpenseEntries";
+import ExpenseCategory from "./ExpenseCategory";
 
-//ExpenseList is the parent component for ExpenseForm, DisplayExpenseEntries and DisplayExpenseCategory
+//ExpenseList is the parent component for ExpenseForm, ExpenseEntries and ExpenseCategory
 //ExpenseList received expense object as props from Expense Parent and passed to 2 display component
 
 const ExpenseList = ({ expense }) => {
@@ -30,8 +30,8 @@ const ExpenseList = ({ expense }) => {
         onCategorySelection={(e) => setSelectedCategory(e.target.value)}
       ></ExpenseCategorySelection>
       <ExpenseForm categoryChoice={selectedCategory} />
-      <DisplayExpenseCategory expense={expense} list={defaultCategories} />
-      <DisplayExpenseEntries expense={expense} />
+      <ExpenseCategory expense={expense} list={defaultCategories} />
+      <ExpenseEntries expense={expense} />
     </div>
   );
 };
