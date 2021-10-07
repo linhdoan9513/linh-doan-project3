@@ -1,5 +1,6 @@
 import { ResponsivePie } from "@nivo/pie";
 
+//Using Nivo as thirdparty to display data:https://nivo.rocks/about
 const ExpenseChart = ({ expense }) => {
   const data = [
     {
