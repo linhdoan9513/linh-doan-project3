@@ -1,6 +1,7 @@
 # Budget App 💵
 
 A personal budget tracking system for expense and income
+Live Link: https://budget-planner-linh.netlify.app
 
 ## MVP 🎯
 
