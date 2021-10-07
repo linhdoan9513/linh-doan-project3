@@ -1,10 +1,10 @@
 import redirect from "../Models/Authentication";
 
 const SignIn = () => (
-  <div className="SignIn">
-    <p className="SignIn">Please Sign In to continue</p>
+  <div className="signInContainer wrapper">
+    <p className="signIn">Sign In to continue</p>
     <div>
-      <button className="sign-in-btn" onClick={redirect}>
+      <button className="signInButton" onClick={redirect}>
         Sign In With Google
       </button>
     </div>

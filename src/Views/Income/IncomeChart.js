@@ -4,7 +4,7 @@ const IncomeChart = ({ income }) => {
     {
       id: "Rental Income",
       label: "Rental",
-      value: ` $ ${income["Rental Income"]}`,
+      value: income["Rental Income"],
       color: "hsl(320, 70%, 50%)",
     },
     {

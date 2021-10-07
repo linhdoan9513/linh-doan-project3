@@ -16,7 +16,17 @@
 }
 
 @media (max-width: 768px) {
+    header {
+        .centerButton {
+            display: flex; 
+            flex-direction: column;
+        }
+    }
 
+      .pieChart {
+        height: 350px;
+        width: auto;
+    } 
 }
 
 @media (max-width: 480px) {

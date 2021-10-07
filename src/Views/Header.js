@@ -1,14 +1,12 @@
-import money from "../assets/money.png";
+import SignOut from "../Authentication/SignOut";
 
-const Header = ({ user }) => {
+const Header = ({ user, onSignOut }) => {
   return (
     <header className="wrapper">
-      <h1>
-        Personal Wallet For {user.displayName}
-        <span>
-          <img className="logo" src={money} alt="wallet" />
-        </span>
-      </h1>
+      <div className="centerButton">
+        <h1>Personal Wallet For {user.displayName}</h1>
+        <SignOut onSignOut={onSignOut}></SignOut>
+      </div>
     </header>
   );
 };

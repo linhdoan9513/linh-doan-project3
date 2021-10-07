@@ -1,42 +1,66 @@
 import { ResponsivePie } from "@nivo/pie";
 
 const ExpenseChart = ({ expense }) => {
-  // const data = [
-  //   {
-  //     id: "Cash",
-  //     label: "Cash",
-  //     value: expense["Cash"],
-  //     color: "hsl(320, 70%, 50%)",
-  //   },
-  //   {
-  //     id: "Dinning Out",
-  //     label: "Dinning Out",
-  //     value: expense["Dinning Out"],
-  //     color: "hsl(31, 70%, 50%)",
-  //   },
-  //   {
-  //     id: "Education",
-  //     label: "Education",
-  //     value: expense["Education"],
-  //     color: "hsl(112, 70%, 50%)",
-  //   },
-  //   {
-  //     id: "Groceries",
-  //     label: "Groceries",
-  //     value: expense["Groceries"],
-  //     color: "hsl(43, 70%, 50%)",
-  //   },
-  //   {
-  //     id: "Health",
-  //     label: "Health",
-  //     value: expense["Retirement expense"],
-  //     color: "hsl(186, 70%, 50%)",
-  //   },
-  // ];
+  const data = [
+    {
+      id: "Cash",
+      label: "Cash",
+      value: expense["Cash"],
+      color: "hsl(320, 70%, 50%)",
+    },
+    {
+      id: "Dinning Out",
+      label: "Dinning Out",
+      value: expense["Dinning Out"],
+      color: "hsl(31, 70%, 50%)",
+    },
+    {
+      id: "Education",
+      label: "Education",
+      value: expense["Education"],
+      color: "hsl(112, 70%, 50%)",
+    },
+    {
+      id: "Groceries",
+      label: "Groceries",
+      value: expense["Groceries"],
+      color: "hsl(43, 70%, 50%)",
+    },
+    {
+      id: "Health",
+      label: "Health",
+      value: expense["Health"],
+      color: "hsl(186, 70%, 50%)",
+    },
+    {
+      id: "House Hold",
+      label: "House Hold",
+      value: expense["House Hold"],
+      color: "hsl(186, 70%, 50%)",
+    },
+    {
+      id: "Shopping",
+      label: "Shopping",
+      value: expense["Shopping"],
+      color: "#4048cc",
+    },
+    {
+      id: "Transportation",
+      label: "Transportation",
+      value: expense["Transportation"],
+      color: "#0081a7",
+    },
+    {
+      id: "Utilities",
+      label: "Utilities",
+      value: expense["Utilities"],
+      color: "#61CDBB",
+    },
+  ];
 
   return (
     <div className="pieChart">
-      {/* <ResponsivePie
+      <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
@@ -65,8 +89,7 @@ const ExpenseChart = ({ expense }) => {
             },
           },
         }}
-      /> */}
-      <h4>Hello</h4>
+      />
     </div>
   );
 };

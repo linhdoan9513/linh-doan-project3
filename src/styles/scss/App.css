@@ -34,7 +34,8 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -168,7 +169,8 @@ fieldset {
 }
 
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -187,7 +189,8 @@ textarea {
 
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 
@@ -242,13 +245,15 @@ template {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 .sr-only {
@@ -266,11 +271,16 @@ html {
 }
 
 main .individualSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 main .individualSection .incomeSection, main .individualSection .expenseSection {
-  box-shadow: #65FFDA 0px 8px 24px;
+  -webkit-box-shadow: #65FFDA 0px 8px 24px;
+          box-shadow: #65FFDA 0px 8px 24px;
   padding: 20px;
 }
 main .individualSection .incomeSection {
@@ -281,12 +291,18 @@ main .individualSection .expenseSection {
   width: calc(50% - 50px);
 }
 main .summarySection {
-  box-shadow: #65FFDA 0px 8px 24px;
+  -webkit-box-shadow: #65FFDA 0px 8px 24px;
+          box-shadow: #65FFDA 0px 8px 24px;
   padding: 50px 20px;
   margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 main .summarySection p {
   font-size: 20px;
@@ -301,14 +317,26 @@ main .pieChart {
 }
 
 .incomeCategory {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .incomeCategory li {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .incomeCategory li p {
   padding: 0;
@@ -323,9 +351,15 @@ main .pieChart {
 }
 
 .incomeEntries ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .incomeEntries ul li p:first-child {
   font-weight: 700;
@@ -340,8 +374,12 @@ main .pieChart {
   font-weight: 700;
 }
 .incomeEntries .incomeAmount {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .incomeEntries .incomeAmount button {
   padding: 0 10px;
@@ -365,15 +403,29 @@ main .pieChart {
 }
 
 .expenseCategory ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .expenseCategory ul li {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .expenseCategory ul li p {
   padding: 0;
@@ -388,9 +440,15 @@ main .pieChart {
 }
 
 .expenseEntries ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .expenseEntries ul li p:first-child {
   font-weight: 700;
@@ -405,8 +463,12 @@ main .pieChart {
   font-size: 18px;
 }
 .expenseEntries .expenseAmount {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .expenseEntries .expenseAmount button {
   padding: 0 10px;
@@ -414,8 +476,11 @@ main .pieChart {
 }
 
 .expenseContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .expenseContainer div:first-child {
   margin-right: 30px;
@@ -423,7 +488,10 @@ main .pieChart {
 
 @media (max-width: 940px) {
   main .individualSection {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   main .individualSection .incomeSection {
     width: 100%;
@@ -432,6 +500,22 @@ main .pieChart {
   }
   main .individualSection .expenseSection {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  header .centerButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .pieChart {
+    height: 350px;
+    width: auto;
   }
 }
 @media (max-width: 480px) {
@@ -520,4 +604,42 @@ input {
 
 footer {
   margin-top: 40px;
+}
+
+header .centerButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+header .centerButton .signOutButton {
+  padding: 10px 20px;
+  border: 2px dashed #65FFDA;
+}
+
+.signInContainer {
+  width: 400px;
+  height: 400px;
+  border: 5px dashed #65FFDA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.signInContainer .signInButton {
+  border: 1px dashed #65FFDA;
+  padding: 20px 30px;
 }/*# sourceMappingURL=App.css.map */
