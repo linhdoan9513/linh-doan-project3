@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
+import ExpenseCategorySelection from "./ExpenseCategorySelection";
 import DisplayExpenseEntries from "./DisplayExpenseEntries";
 import DisplayExpenseCategory from "./DisplayExpenseCategory";
 
@@ -7,10 +8,10 @@ import DisplayExpenseCategory from "./DisplayExpenseCategory";
 //ExpenseList received expense object as props from Expense Parent and passed to 2 display component
 
 const ExpenseList = ({ expense }) => {
-  const [value, setValue] = useState("default");
+  const [selectedCategory, setSelectedCategory] = useState("default");
 
   //Create default category so user can add individual transaction to the appropriate category and also to generate dropdown menu of all categories option
-  const defaultCategory = [
+  const defaultCategories = [
     "Groceries",
     "Utilities",
     "Shopping",
@@ -24,32 +25,12 @@ const ExpenseList = ({ expense }) => {
 
   return (
     <div className="expenseInput">
-      <form className="expenseDropdown">
-        <label htmlFor="category" className="sr-only">
-          Select Category
-        </label>
-        <select
-          defaultValue={value}
-          onChange={(e) => setValue(e.target.value)}
-          type="select"
-          name="category"
-          className="category"
-          id="category"
-        >
-          <option value="default" disabled>
-            Choose a category
-          </option>
-          {defaultCategory.sort().map((eachCategory) => {
-            return (
-              <option value={eachCategory} key={eachCategory}>
-                {eachCategory}
-              </option>
-            );
-          })}
-        </select>
-      </form>
-      <ExpenseForm categoryChoice={value} />
-      <DisplayExpenseCategory expense={expense} list={defaultCategory} />
+      <ExpenseCategorySelection
+        defaultCategories={defaultCategories}
+        onCategorySelection={(e) => setSelectedCategory(e.target.value)}
+      ></ExpenseCategorySelection>
+      <ExpenseForm categoryChoice={selectedCategory} />
+      <DisplayExpenseCategory expense={expense} list={defaultCategories} />
       <DisplayExpenseEntries expense={expense} />
     </div>
   );
