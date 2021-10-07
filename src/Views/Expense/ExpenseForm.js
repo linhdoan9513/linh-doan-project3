@@ -9,7 +9,7 @@ import { addData } from "../../Models/firebaseModel";
 //DatePicker is a library installed from npm to create a date object and user can select and push into Firebase along with other information
 
 // categoryChoice is prop passed from expense list component so when user can select the expense category and add individual transaction, this helps to keep track the total amount of each categories.
-const ExpenseForm = ({ categoryChoice }) => {
+const ExpenseForm = ({ user, categoryChoice }) => {
   let categoryName = categoryChoice;
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [expenseName, setExpenseName] = useState("");
@@ -19,7 +19,7 @@ const ExpenseForm = ({ categoryChoice }) => {
     event.preventDefault();
     //Add Data is a high level function generated from firebaseModel to take userInput and pass to Firebase database
     if ((expenseName !== "", expenseValue !== "")) {
-      addData("expense/", {
+      addData(`${user.uid}/expense/`, {
         category: categoryName,
         expense: expenseName,
         amount: parseFloat(expenseValue),

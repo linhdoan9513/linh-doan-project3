@@ -3,14 +3,14 @@ import { deleteData, addTopData } from "../../Models/firebaseModel";
 //Received income as props from IncomeList parent;
 //Import DeleteData from firebaseModel to handle user choice to delete input and delete it from firebase database;
 
-const IncomeEntries = ({ income }) => {
+const IncomeEntries = ({ user, income }) => {
   //write condition so that when the expense object length have less than 1 item, add back the top parent category as 0 so it wont break the app. Here, the length is 2 instead of 1 because the parent node counted as 1.
   const handleClick = (e) => {
     if (income.length < 2) {
-      addTopData("income/", 0);
-      deleteData("income/", e.target.name);
+      addTopData(`${user.uid}/income/`, 0);
+      deleteData(`${user.uid}/income/`, e.target.name);
     } else {
-      deleteData("income/", e.target.name);
+      deleteData(`${user.uid}/income/`, e.target.name);
     }
   };
 

@@ -1,10 +1,10 @@
 import money from "../assets/money.png";
 
-const Header = () => {
+const Header = ({ user }) => {
   return (
     <header className="wrapper">
       <h1>
-        Personal Wallet
+        Personal Wallet For {user.displayName}
         <span>
           <img className="logo" src={money} alt="wallet" />
         </span>

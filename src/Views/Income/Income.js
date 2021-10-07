@@ -4,11 +4,11 @@ import IncomeList from "./IncomeList";
 //Income Component as the top Parent of Income category
 //Generate IncomeList as direct child component and pass expense object aka firebase data
 
-const Income = ({ income }) => {
+const Income = ({ user, income }) => {
   return (
     <section className="incomeSection">
       <h2>Income</h2>
-      <IncomeList income={income} />
+      <IncomeList user={user} income={income} />
     </section>
   );
 };

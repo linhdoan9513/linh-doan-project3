@@ -9,14 +9,14 @@ import "react-datepicker/dist/react-datepicker.css";
 //DatePicker is a library installed from npm to create a date object and user can select and push into Firebase along with other information
 
 // Choice is prop passed from income list component so when user can select the income category and add individual transaction, this helps to keep track the total amount of each categories.
-const IncomeForm = ({ choice }) => {
+const IncomeForm = ({ user, choice }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [incomeValue, setIncomeValue] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (incomeValue !== "") {
-      addData("income/", {
+      addData(`${user.uid}/income/`, {
         category: choice,
         amount: parseFloat(incomeValue),
         date: selectedDate.toISOString(),

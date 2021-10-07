@@ -3,16 +3,16 @@ import { deleteData, addTopData } from "../../Models/firebaseModel";
 //Received expense as props from ExpenseList parent;
 //Import DeleteData from firebaseModel to handle user choice to delete input and delete it from firebase database;
 
-const ExpenseEntries = ({ expense }) => {
+const ExpenseEntries = ({ user, expense }) => {
   //Create a handleClick function to delete Item from database
   const handleClick = (e) => {
     //write condition so that when the expense object length have less than 1 item, add back the top parent category as 0 so it wont break the app. Here, the length is 2 instead of 1 because the parent node counted as 1.
     if (expense.length < 2) {
       console.log(expense.length);
-      addTopData("expense/", 0);
-      deleteData("expense/", e.target.name);
+      addTopData(`${user.uid}/expense/`, 0);
+      deleteData(`${user.uid}/expense/`, e.target.name);
     } else {
-      deleteData("expense/", e.target.name);
+      deleteData(`${user.uid}/expense/`, e.target.name);
     }
   };
 

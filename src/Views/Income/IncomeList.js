@@ -7,7 +7,7 @@ import IncomeCategorySelection from "./IncomeCategorySelection";
 //IncomeList is the parent component for IncomeForm, IncomeEntries and IncomeCategory
 //IncomeList received income object as props from Income Parent and passed to 2 display components
 
-const IncomeList = ({ income }) => {
+const IncomeList = ({ user, income }) => {
   const [selectedCategory, setSelectedCategory] = useState("default");
   const defaultIncome = [
     "Employment Income",
@@ -24,10 +24,10 @@ const IncomeList = ({ income }) => {
           defaultIncome={defaultIncome}
           onCategorySelection={(e) => setSelectedCategory(e.target.value)}
         ></IncomeCategorySelection>
-        <IncomeForm choice={selectedCategory} />
+        <IncomeForm user={user} choice={selectedCategory} />
       </div>
       <IncomeCategory income={income} categories={defaultIncome} />
-      <IncomeEntries income={income} />
+      <IncomeEntries user={user} income={income} />
     </>
   );
 };

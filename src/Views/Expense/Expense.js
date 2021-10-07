@@ -4,12 +4,12 @@ import ExpenseList from "./ExpenseList";
 //Expense Component as the top Parent of Expense category
 //Generate ExpenseList as direct child component and pass expense object aka firebase data
 
-const Expense = ({ expense }) => {
+const Expense = ({ user, expense }) => {
   return (
     <section className="expenseSection">
       <h2>Expense</h2>
       <div className="expenseInput">
-        <ExpenseList expense={expense} />
+        <ExpenseList user={user} expense={expense} />
       </div>
     </section>
   );

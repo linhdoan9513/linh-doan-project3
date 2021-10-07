@@ -7,9 +7,9 @@ import Income from "./Income/Income";
 
 //Import getData function from firebaseModel to get allData from firebase database for both expense and income
 
-const Main = () => {
-  const income = useGetIncome();
-  const expense = useGetExpense();
+const Main = ({ user }) => {
+  const income = useGetIncome(user);
+  const expense = useGetExpense(user);
 
   const sortedExpense = sortItemsByDate(expense);
   const sortedIncome = sortItemsByDate(income);
@@ -18,8 +18,8 @@ const Main = () => {
     <main className="wrapper">
       <Summary expense={sortedExpense} income={sortedIncome} />
       <div className="individualSection">
-        <Income income={sortedIncome} />
-        <Expense expense={sortedExpense} />
+        <Income user={user} income={sortedIncome} />
+        <Expense user={user} expense={sortedExpense} />
       </div>
     </main>
   );
